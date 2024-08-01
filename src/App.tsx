@@ -6,14 +6,15 @@ import HL7FHIR from "./assets/logos/HL7FHIR.png";
 import indy from "./assets/logos/indy.png";
 import linux from "./assets/logos/linux.svg";
 import fhirDiagram from "./assets/fhir-diagram.png";
-import historyImage from "./assets/app2.png";
-import humanImageLeft from "./assets/humans-image-left.png";
-import humanImageRight from "./assets/human-image-right.png";
-import accessible from "./assets/badges/accessible.png";
-import secured from "./assets/badges/secured.png";
-import userCentric from "./assets/badges/user-centric.png";
-import worldwide from "./assets/badges/worldwide.png";
-import medications from "./assets/medications.png";
+import medicalHistory from "./assets/image-test.png";
+// import historyImage from "./assets/app2.png";
+// import humanImageLeft from "./assets/humans-image-left.png";
+// import humanImageRight from "./assets/human-image-right.png";
+// import accessible from "./assets/badges/accessible.png";
+// import secured from "./assets/badges/secured.png";
+// import userCentric from "./assets/badges/user-centric.png";
+// import worldwide from "./assets/badges/worldwide.png";
+// import medications from "./assets/medications.png";
 
 import { IconRosetteDiscountCheck } from "@tabler/icons-react";
 import { Flex, FlexCenter, FlexColumn, FlexRow } from "./components/flexes";
@@ -144,6 +145,7 @@ const ForIndividualsContainer = styled(FlexColumn)`
   ${VisualContainer} {
     position: relative;
     padding: 48px 0;
+    /* width: 40vw; */
     ${LeftImage},${RightImage},${MedicationsImage},${UserCentric},${SecuredImage},${AccessibleImage},${WorldWideImage} {
       position: absolute;
     }
@@ -368,12 +370,12 @@ function App() {
           <InterTextSection>
             <InterLeftSection>
               <Subtitle>For Medical Organizations</Subtitle>
-              <SectionTitle>
+              <SectionTitle isWhite>
                 Comply with interoperability regulation
               </SectionTitle>
             </InterLeftSection>
             <InterRightSection>
-              <DescriptionText IsWhite>
+              <DescriptionText IsWhite style={{ width: "80%" }}>
                 Get compliance with patient access final and Information
                 Blocking rules. Janus is developing customized solutions for
                 seamless integration with FHIR.
@@ -400,16 +402,17 @@ function App() {
           </DescriptionText>
         </DescriptionWrapper>
         <VisualContainer>
-          <img src={historyImage} width={"60%"} />
-          <LeftImage src={humanImageLeft} />
+          {/* <img src={historyImage} width={"60%"} /> */}
+          {/* <LeftImage src={humanImageLeft} /> */}
           {/* left side  */}
-          <WorldWideImage src={worldwide} />
-          <AccessibleImage src={accessible} />
+          {/* <WorldWideImage src={worldwide} />
+          <AccessibleImage src={accessible} /> */}
           {/* right side  */}
-          <RightImage src={humanImageRight} />
+          {/* <RightImage src={humanImageRight} />
           <MedicationsImage src={medications} />
           <UserCentric src={userCentric} />
-          <SecuredImage src={secured} />
+          <SecuredImage src={secured} /> */}
+          <img src={medicalHistory} alt="" width={"80%"} />
         </VisualContainer>
       </ForIndividualsContainer>
     </>
