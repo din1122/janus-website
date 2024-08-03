@@ -21,21 +21,21 @@ import {
   FlexMiddle,
   FlexRow,
   FlexRowSpaceBetween,
-} from "./shared/flexes";
-import CTASection from "./components/CTASection";
+} from "../shared/flexes";
+import CTASection from "~/components/CTASection";
 import {
   ColoredText,
   DescriptionText,
   HeaderTitle,
   SectionTitle,
   Subtitle,
-} from "./shared/Texts";
-import { Circle } from "./components/Visuals";
-import { Button } from "./shared/Button";
-import Footer from "./components/Footer";
-import { Divider } from "./shared/Divider";
-import { pageLayout } from "./shared/LayoutStyle";
-import CookieConsentPopup from "./components/CookieConsentPopup";
+} from "~/shared/Texts";
+import { Circle } from "~/components/Visuals";
+import { Button } from "~/shared/Button";
+import Footer from "~/components/Footer";
+import { Divider } from "~/shared/Divider";
+import { pageLayout } from "~/shared/LayoutStyle";
+import CookieConsentPopup from "~/components/CookieConsentPopup";
 
 const HeroWrapper = styled(FlexColumn)`
   ${pageLayout}
@@ -57,7 +57,6 @@ const Container = styled(FlexColumn)`
     border-radius: 16px;
   }
 `;
-
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
@@ -90,6 +89,13 @@ const Header = styled.div`
   }
 `;
 
+// const DescriptionWrapper = styled.div`
+//   width: 60%;
+//   @media (max-width: 768px) {
+//     width: 100%;
+//   }
+// `;
+
 const LogosWrapper = styled(FlexRow)`
   gap: 16px;
   padding: 16px;
@@ -101,13 +107,11 @@ const LogosWrapper = styled(FlexRow)`
 const LeftTextWrapper = styled(FlexColumn)`
   gap: 16px;
 `;
-
 const float = keyframes`
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0px); }
 `;
-
 const FloatingCard = styled.div`
   padding: 24px;
   width: 280px;
@@ -150,6 +154,10 @@ const InterTextSection = styled(FlexRowSpaceBetween)`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+`;
+
+const InterLeftSection = styled(FlexColumn)`
+  /* flex: 1; */
 `;
 
 const InterRightSection = styled(Flex)`
@@ -271,7 +279,6 @@ const LeftSideWrapper = styled(FlexColumn)`
     }
   }
 `;
-
 const RightSideContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -279,7 +286,7 @@ const RightSideContainer = styled.div`
   position: relative;
 `;
 
-function App() {
+function HomePage() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   return (
     <>
@@ -298,11 +305,13 @@ function App() {
                 <HeaderTitle>
                   <ColoredText>Empowering</ColoredText> Healthcare
                 </HeaderTitle>
+                {/* <DescriptionWrapper> */}
                 <DescriptionText IsWhite width="80%">
                   Enabling seamless access to Complete Patient History for
                   individuals. Optimizing cost for payers, and Interoperability
                   development for Healthcare Providers.
                 </DescriptionText>
+                {/* </DescriptionWrapper> */}
               </LeftTextWrapper>
               <Button>Get Janus</Button>
               <LogosWrapper>
@@ -325,12 +334,12 @@ function App() {
           </HeroContainer>
           <InterSection>
             <InterTextSection>
-              <FlexColumn>
+              <InterLeftSection>
                 <Subtitle>For Medical Organizations</Subtitle>
                 <SectionTitle isWhite>
                   Comply with interoperability regulation
                 </SectionTitle>
-              </FlexColumn>
+              </InterLeftSection>
               <InterRightSection>
                 <DescriptionText IsWhite>
                   Get compliance with patient access final and Information
@@ -352,12 +361,14 @@ function App() {
           <Subtitle>For Individuals</Subtitle>
           <SectionTitle isCentered>Full medical history access</SectionTitle>
         </SectionTitleWrapper>
+        {/* <DescriptionWrapper> */}
         <DescriptionText isCentered width="50%">
           Janus will allow you to access, aggregate and share all your medical
           records easily from your phone. Allowing you to get the continuity of
           care you deserve from anywhere in the world avoiding the bureaucratic
           burden.
         </DescriptionText>
+        {/* </DescriptionWrapper> */}
         <VisualContainer>
           {!isTabletOrMobile && (
             <img src={medicalHistory} alt="" width={"80%"} />
@@ -370,17 +381,18 @@ function App() {
           )}
         </VisualContainer>
       </ForIndividualsContainer>
-
       <ForMedicalProvidersContainer>
         <MedicalTextSection>
           <SectionTitleWrapper>
             <Subtitle>For Medical Providers</Subtitle>
             <SectionTitle>Complete clinical picture</SectionTitle>
           </SectionTitleWrapper>
+          {/* <DescriptionWrapper> */}
           <DescriptionText>
             Connect to payer directly, Access full patient histories, improve
             diagnosis accuracy and patient trust.
           </DescriptionText>
+          {/* </DescriptionWrapper> */}
         </MedicalTextSection>
         <VisualContainer>
           {!isTabletOrMobile && (
@@ -391,6 +403,7 @@ function App() {
           )}
         </VisualContainer>
       </ForMedicalProvidersContainer>
+
       <CTASection />
       <CookieConsentPopup />
       <Footer />
@@ -398,4 +411,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
