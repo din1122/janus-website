@@ -8,7 +8,7 @@ export const flexMiddleCss = css`
   align-items: center;
 `;
 
-export const FlexMiddle = styled.div`
+export const FlexMiddle = styled.div<{ gap?: string }>`
   ${flexCss};
   align-items: center;
 `;
