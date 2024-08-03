@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { FlexColumn, FlexRowSpaceBetween } from "./flexes";
+import { FlexColumn, FlexRowSpaceBetween } from "../shared/flexes";
 import negativeJanusLogo from "~/assets/logo-negative.svg";
-import { Divider } from "./Divider";
-import { pageLayout } from "./LayoutStyle";
+import { Divider } from "../shared/Divider";
+import { pageLayout } from "../shared/LayoutStyle";
 
 const FooterContainer = styled.div`
   background: linear-gradient(180deg, #fff 33.33%, #e0e1eb 100%);

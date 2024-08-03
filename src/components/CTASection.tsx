@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import { FlexColumn, FlexColumnCenter } from "./flexes";
+import { FlexColumn, FlexColumnCenter } from "../shared/flexes";
 import { Circle } from "./Visuals";
-import { ColoredText, DescriptionText, HeaderTitle } from "./Texts";
-import { Button } from "./Button";
-import { pageLayout } from "./LayoutStyle";
+import { ColoredText, DescriptionText, HeaderTitle } from "../shared/Texts";
+import { Button } from "../shared/Button";
+import { pageLayout } from "../shared/LayoutStyle";
 
 const CTASectionContainer = styled(FlexColumn)`
   overflow: hidden;
@@ -42,7 +42,7 @@ const CTACircle = styled(Circle)`
 `;
 
 const TextWrapper = styled(FlexColumnCenter)`
-  width: 80%;
+  width: 90%;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -53,8 +53,8 @@ const CTASection = () => {
     <CTASectionWrapper>
       <CTASectionContainer>
         <TextWrapper>
-          <HeaderTitle style={{ textAlign: "center", display: "inline" }}>
-            Elevate Your Healthcare System to the{" "}
+          <HeaderTitle isCentered>
+            Elevate Your Healthcare System to the
             <ColoredText color={"#A5A8F3"} style={{ display: "inline" }}>
               Next Level
             </ColoredText>
