@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import "~/App.css";
+import "./App.css";
 import JanusLogo from "./assets/janus.svg";
 import appImage from "./assets/app.png";
 import HL7FHIR from "./assets/logos/HL7FHIR.png";
