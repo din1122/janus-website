@@ -3,13 +3,16 @@ import { FlexColumn, FlexRowSpaceBetween } from "../shared/flexes";
 import negativeJanusLogo from "~/assets/logo-negative.svg";
 import { Divider } from "../shared/Divider";
 import { pageLayout } from "../shared/LayoutStyle";
+import { Link } from "react-router-dom";
 
 const FooterContainer = styled.div`
   background: linear-gradient(180deg, #fff 33.33%, #e0e1eb 100%);
 `;
+
 const FooterWrapper = styled(FlexColumn)`
   ${pageLayout}
 `;
+
 const HyperLink = styled.a`
   color: #52537a;
   line-height: 175%;
@@ -34,9 +37,16 @@ const LinksSectionContainer = styled(FlexRowSpaceBetween)`
     gap: 48px;
   }
 `;
+
 const LinksContainer = styled(FlexColumn)`
   gap: 12px;
   align-content: start;
+`;
+
+const RouterLinks = styled(Link)`
+  color: #52537a;
+  line-height: 175%;
+  font-size: 14px;
 `;
 
 const Footer = () => {
@@ -45,7 +55,9 @@ const Footer = () => {
       <FooterWrapper>
         <LinksSectionContainer>
           <LinksContainer>
-            <img src={negativeJanusLogo} style={{ width: "115px" }} />
+            <Link to="/">
+              <img src={negativeJanusLogo} style={{ width: "115px" }} />
+            </Link>
             <span style={{ color: "black" }}>Empowering HealthCare System</span>
           </LinksContainer>
           <LinksContainer>
@@ -75,7 +87,9 @@ const Footer = () => {
           <LinksContainer>
             <FooterSectionTitle>Policies</FooterSectionTitle>
             <HyperLink>Privacy Policy</HyperLink>
-            <HyperLink>Terms of use</HyperLink>
+            <HyperLink>
+              <RouterLinks to="/terms-of-use">Terms of Use</RouterLinks>
+            </HyperLink>
             <HyperLink>Security</HyperLink>
             <HyperLink>Privacy Policy</HyperLink>
             <HyperLink>Policies</HyperLink>
