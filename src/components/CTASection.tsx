@@ -5,7 +5,6 @@ import { Circle } from "./Visuals";
 import { ColoredText, DescriptionText, HeaderTitle } from "../shared/Texts";
 import { Button } from "../shared/Button";
 import { pageLayout } from "../shared/LayoutStyle";
-import LeadCaptureForm from "./LeadCaptureForm";
 
 const CTASectionContainer = styled(FlexColumn)`
   overflow: hidden;
@@ -66,7 +65,6 @@ const CTASection = () => {
           </DescriptionText>
         </TextWrapper>
         <Button>Contact us</Button>
-        <LeadCaptureForm />
         <CTACircle />
       </CTASectionContainer>
     </CTASectionWrapper>
