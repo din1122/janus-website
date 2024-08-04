@@ -368,6 +368,7 @@ function HomePage() {
         </VisualContainer>
       </ForMedicalProvidersContainer>
       <CTASection />
+
       <form name="contact" netlify netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
