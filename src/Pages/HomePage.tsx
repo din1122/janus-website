@@ -30,7 +30,7 @@ import {
   Subtitle,
 } from "~/shared/Texts";
 import { Circle } from "~/components/Visuals";
-import { Button } from "~/shared/Button";
+import Button from "~/shared/Button";
 
 import { pageLayout } from "~/shared/LayoutStyle";
 import CookieConsentPopup from "~/components/CookieConsentPopup";
@@ -234,6 +234,7 @@ const CardTexts = styled(FlexColumn)`
     font-size: 18px;
     font-weight: 800;
     line-height: 1;
+    margin: 0;
   }
 `;
 
@@ -280,7 +281,9 @@ function HomePage() {
                   development for Healthcare Providers.
                 </DescriptionText>
               </LeftTextWrapper>
-              <Button>Get Janus</Button>
+              <Button as="a" href="#CTA-section">
+                Get Janus
+              </Button>
               <LogosWrapper>
                 <img src={HL7FHIR} />
                 <img src={indy} />
@@ -368,28 +371,6 @@ function HomePage() {
         </VisualContainer>
       </ForMedicalProvidersContainer>
       <CTASection />
-
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
 
       <CookieConsentPopup />
     </>

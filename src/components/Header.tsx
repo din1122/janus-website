@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "~/shared/Button";
+import Button from "~/shared/Button";
 import { Divider } from "~/shared/Divider";
 import { FlexRowSpaceBetween } from "~/shared/flexes";
 import JanusLogo from "~/assets/janus.svg";
@@ -30,7 +30,9 @@ const Header = () => {
         <Link to="/">
           <img src={JanusLogo} />
         </Link>
-        <Button>Contact us</Button>
+        <Button as="a" href="#CTA-section">
+          Contact us
+        </Button>
       </FlexRowSpaceBetween>
       <Divider />
     </StyledHeader>
