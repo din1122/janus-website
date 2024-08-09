@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import Button from "~/shared/Button";
-import { Divider } from "~/shared/Divider";
-import { FlexRowSpaceBetween } from "~/shared/flexes";
-import JanusLogo from "~/assets/janus.svg";
-import { pageLayout } from "~/shared/LayoutStyle";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import Button from '~/shared/Button';
+import { Divider } from '~/shared/Divider';
+import { FlexRow, FlexRowSpaceBetween } from '~/shared/flexes';
+import JanusLogo from '~/assets/janus.svg';
+import { pageLayout } from '~/shared/LayoutStyle';
+import { Link } from 'react-router-dom';
+
 const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
@@ -26,10 +27,16 @@ const StyledHeader = styled.div`
 const Header = () => {
   return (
     <StyledHeader>
-      <FlexRowSpaceBetween style={{ width: "100%" }}>
-        <Link to="/">
-          <img src={JanusLogo} />
-        </Link>
+      <FlexRowSpaceBetween style={{ width: '100%' }}>
+        <FlexRow gap="24">
+          <Link to="/">
+            <img src={JanusLogo} />
+          </Link>
+          <Link to="/about-us">
+            <span>About us</span>
+          </Link>
+        </FlexRow>
+
         <Button as="a" href="#CTA-section">
           Contact us
         </Button>
