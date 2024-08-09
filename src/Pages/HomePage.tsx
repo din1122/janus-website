@@ -65,7 +65,7 @@ const HeroContainer = styled.div`
   width: 100%;
   margin: 0 auto auto auto;
   box-sizing: border-box;
-  height: 100vh;
+  /* height: 100vh; */
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 24px 0%;
@@ -77,6 +77,7 @@ const LogosWrapper = styled(FlexRow)`
   padding: 16px;
   @media (max-width: 768px) {
     flex-wrap: wrap;
+    padding: 48px 0;
   }
 `;
 
@@ -126,6 +127,7 @@ const StyledAppImage = styled.img`
 
 const InterSection = styled(FlexColumn)`
   gap: 80px;
+  padding: 120px 0;
 `;
 
 const InterTextSection = styled(FlexRowSpaceBetween)`
