@@ -264,6 +264,9 @@ const RightSideContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 function HomePage() {

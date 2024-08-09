@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { FlexColumn, FlexRowSpaceBetween } from "../shared/flexes";
-import negativeJanusLogo from "~/assets/logo-negative.svg";
-import { Divider } from "../shared/Divider";
-import { pageLayout } from "../shared/LayoutStyle";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { FlexColumn, FlexRowSpaceBetween } from '../shared/flexes';
+import negativeJanusLogo from '~/assets/logo-negative.svg';
+import { Divider } from '../shared/Divider';
+import { pageLayout } from '../shared/LayoutStyle';
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.div`
   background: linear-gradient(180deg, #fff 33.33%, #e0e1eb 100%);
@@ -43,7 +43,7 @@ const LinksContainer = styled(FlexColumn)`
   align-content: start;
 `;
 
-const RouterLinks = styled(Link)`
+const RouterLink = styled(Link)`
   color: #52537a;
   line-height: 175%;
   font-size: 14px;
@@ -56,14 +56,16 @@ const Footer = () => {
         <LinksSectionContainer>
           <LinksContainer>
             <Link to="/">
-              <img src={negativeJanusLogo} style={{ width: "115px" }} />
+              <img src={negativeJanusLogo} style={{ width: '115px' }} />
             </Link>
-            <span style={{ color: "black" }}>Empowering HealthCare System</span>
+            <span style={{ color: 'black' }}>
+              Empowering HealthCare Systems
+            </span>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Solutions</FooterSectionTitle>
             <HyperLink>For Medical Providers</HyperLink>
-            <HyperLink>For Individuals</HyperLink>
+            <HyperLink>For Patients</HyperLink>
             <HyperLink>For insurance companies</HyperLink>
             <HyperLink>Interoperability services</HyperLink>
           </LinksContainer>
@@ -88,23 +90,28 @@ const Footer = () => {
             <FooterSectionTitle>Policies</FooterSectionTitle>
             <HyperLink>Privacy Policy</HyperLink>
             <HyperLink>
-              <RouterLinks to="/terms-of-use">Terms of Use</RouterLinks>
+              <RouterLink to="/terms-of-use">Terms of Use</RouterLink>
             </HyperLink>
             <HyperLink>Security</HyperLink>
-            <HyperLink>Privacy Policy</HyperLink>
             <HyperLink>Policies</HyperLink>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Socials</FooterSectionTitle>
-            <HyperLink>Youtube</HyperLink>
-            <HyperLink>Facebook</HyperLink>
-            <HyperLink>Twitter</HyperLink>
-            <HyperLink>Linkedin</HyperLink>
+            <HyperLink href="https://www.youtube.com/@JanusHealth/featured">
+              Youtube
+            </HyperLink>
+            <HyperLink href="https://www.youtube.com/@JanusHealth/featured">
+              Facebook
+            </HyperLink>
+            <HyperLink href="https://x.com/janus_health">Twitter</HyperLink>
+            <HyperLink href="https://www.linkedin.com/company/janus-healthcare">
+              Linkedin
+            </HyperLink>
             <HyperLink>Blog</HyperLink>
             <HyperLink>Github</HyperLink>
           </LinksContainer>
         </LinksSectionContainer>
-        <FlexColumn style={{ padding: "0 0 18px 0", gap: "18px" }}>
+        <FlexColumn style={{ padding: '0 0 18px 0', gap: '18px' }}>
           <Divider />
           <DisclaimerText>
             Copyright © 2024 Janus. All rights reserved.

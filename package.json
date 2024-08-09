@@ -12,6 +12,7 @@
   "dependencies": {
     "@netlify/functions": "^2.8.1",
     "@netlify/plugin-emails": "^1.1.1",
+    "@nextui-org/dropdown": "^2.1.29",
     "@tabler/icons-react": "^3.11.0",
     "node-fetch": "^3.3.2",
     "react": "^18.3.1",
