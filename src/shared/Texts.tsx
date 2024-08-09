@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const DescriptionText = styled.p<{
   IsWhite?: boolean;
@@ -13,8 +13,8 @@ export const DescriptionText = styled.p<{
     css`
       width: ${width};
     `}
-  ${({ IsWhite }) => IsWhite && "color: #d1d2e0;"}
-  ${({ isCentered }) => isCentered && "text-align: center;"}
+  ${({ IsWhite }) => IsWhite && 'color: #d1d2e0;'}
+  ${({ isCentered }) => isCentered && 'text-align: center;'}
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -35,17 +35,21 @@ export const SectionTitle = styled.h2<{
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.72px;
-  ${({ isWhite }) => isWhite && "color: #fff;"}
-  ${({ isCentered }) => isCentered && "text-align: center;"}
+  ${({ isWhite }) => isWhite && 'color: #fff;'}
+  ${({ isCentered }) => isCentered && 'text-align: center;'}
 `;
 
-export const HeaderTitle = styled.h1<{ isCentered?: boolean }>`
+export const HeaderTitle = styled.h1<{
+  isCentered?: boolean;
+  isWhite?: boolean;
+}>`
   font-size: 84px;
   font-weight: 800;
   margin: 0;
   line-height: normal;
   letter-spacing: -1.28px;
-  ${({ isCentered }) => isCentered && "text-align: center;"}
+  ${({ isCentered }) => isCentered && 'text-align: center;'}
+  ${({ isWhite }) => isWhite && 'color: #fff;'}
   @media (max-width: 768px) {
     font-size: 34px;
   }
