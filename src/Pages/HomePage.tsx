@@ -1,40 +1,40 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
-import appImage from "~/assets/app.png";
-import HL7FHIR from "~/assets/logos/HL7FHIR.png";
-import indy from "~/assets/logos/indy.png";
-import linux from "~/assets/logos/linux.svg";
-import fhirDiagram from "~/assets/fhir-diagram.png";
-import fhirDiagramMobile from "~/assets/fhir-diagram-mobile.png";
-import medicalHistory from "~/assets/medical.png";
-import medicalProvider from "~/assets/provider-image.png";
-import medicalProviderMobile from "~/assets/mobile-medical.png";
-import medicalProviderMobile2 from "~/assets/mobile-medical-2.png";
-import providerMobile from "~/assets/mobile-provider-image.png";
-import { useMediaQuery } from "react-responsive";
-import { IconRosetteDiscountCheck } from "@tabler/icons-react";
+import appImage from '~/assets/app.png';
+import HL7FHIR from '~/assets/logos/HL7FHIR.png';
+import indy from '~/assets/logos/indy.png';
+import linux from '~/assets/logos/linux.svg';
+import fhirDiagram from '~/assets/fhir-diagram.png';
+import fhirDiagramMobile from '~/assets/fhir-diagram-mobile.png';
+import medicalHistory from '~/assets/medical.png';
+import medicalProvider from '~/assets/provider-image.png';
+import medicalProviderMobile from '~/assets/mobile-medical.png';
+import medicalProviderMobile2 from '~/assets/mobile-medical-2.png';
+import providerMobile from '~/assets/mobile-provider-image.png';
+import { useMediaQuery } from 'react-responsive';
+import { IconRosetteDiscountCheck } from '@tabler/icons-react';
 import {
   Flex,
   FlexCenter,
   FlexColumn,
   FlexMiddle,
   FlexRow,
-  FlexRowSpaceBetween,
-} from "~/shared/flexes";
-import CTASection from "~/components/CTASection";
+  FlexRowSpaceBetween
+} from '~/shared/flexes';
+import CTASection from '~/components/CTASection';
 import {
   ColoredText,
   DescriptionText,
   HeaderTitle,
   SectionTitle,
-  Subtitle,
-} from "~/shared/Texts";
-import { Circle } from "~/components/Visuals";
-import Button from "~/shared/Button";
+  Subtitle
+} from '~/shared/Texts';
+import { Circle } from '~/components/Visuals';
+import Button from '~/shared/Button';
 
-import { pageLayout } from "~/shared/LayoutStyle";
-import CookieConsentPopup from "~/components/CookieConsentPopup";
-import Header from "~/components/Header";
+import { pageLayout } from '~/shared/LayoutStyle';
+import CookieConsentPopup from '~/components/CookieConsentPopup';
+import Header from '~/components/Header';
 
 const HeroWrapper = styled(FlexColumn)`
   ${pageLayout}
@@ -173,7 +173,9 @@ const MedicalProvider = styled.img`
   }
 `;
 
-const MedicalTextSection = styled(FlexColumn)``;
+const MedicalTextSection = styled(FlexColumn)`
+  width: 100%;
+`;
 
 const ForMedicalProvidersContainer = styled(FlexMiddle)`
   ${pageLayout}
@@ -265,7 +267,7 @@ const RightSideContainer = styled.div`
 `;
 
 function HomePage() {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   return (
     <>
       <Container>
@@ -274,7 +276,7 @@ function HomePage() {
           <HeroContainer>
             <LeftSideWrapper>
               <LeftTextWrapper>
-                <HeaderTitle>
+                <HeaderTitle isWhite>
                   <ColoredText>Empowering</ColoredText> Healthcare
                 </HeaderTitle>
                 <DescriptionText IsWhite width="80%">
@@ -329,7 +331,7 @@ function HomePage() {
         </HeroWrapper>
       </Container>
       <ForIndividualsContainer>
-        <SectionTitleWrapper style={{ alignItems: "center" }}>
+        <SectionTitleWrapper style={{ alignItems: 'center' }}>
           <Subtitle>For Individuals</Subtitle>
           <SectionTitle isCentered>Full medical history access</SectionTitle>
         </SectionTitleWrapper>
@@ -341,12 +343,12 @@ function HomePage() {
         </DescriptionText>
         <VisualContainer>
           {!isTabletOrMobile && (
-            <img src={medicalHistory} alt="" width={"80%"} />
+            <img src={medicalHistory} alt="" width={'80%'} />
           )}
           {isTabletOrMobile && (
             <>
               <img src={medicalProviderMobile} alt="" />
-              <img src={medicalProviderMobile2} alt="" width={"90%"} />
+              <img src={medicalProviderMobile2} alt="" width={'90%'} />
             </>
           )}
         </VisualContainer>
@@ -365,10 +367,10 @@ function HomePage() {
         </MedicalTextSection>
         <VisualContainer>
           {!isTabletOrMobile && (
-            <MedicalProvider src={medicalProvider} alt="" width={"70%"} />
+            <MedicalProvider src={medicalProvider} alt="" width={'80%'} />
           )}
           {isTabletOrMobile && (
-            <MedicalProvider src={providerMobile} alt="" width={"100%"} />
+            <MedicalProvider src={providerMobile} alt="" width={'100%'} />
           )}
         </VisualContainer>
       </ForMedicalProvidersContainer>
