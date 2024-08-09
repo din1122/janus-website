@@ -32,9 +32,9 @@ const Header = () => {
           <Link to="/">
             <img src={JanusLogo} />
           </Link>
-          <Link to="/about-us">
+          {/* <Link to="/about-us">
             <span>About us</span>
-          </Link>
+          </Link> */}
         </FlexRow>
 
         <Button as="a" href="#CTA-section">
