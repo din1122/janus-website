@@ -5,6 +5,7 @@ import { FlexRow, FlexRowSpaceBetween } from '~/shared/flexes';
 import JanusLogo from '~/assets/janus.svg';
 import { pageLayout } from '~/shared/LayoutStyle';
 import { Link } from 'react-router-dom';
+import ScrollToCTA from './utils/ScrollToCTA';
 // import {
 //   Dropdown,
 //   DropdownTrigger,
@@ -108,7 +109,7 @@ const Header = () => {
           </HeaderLinks> */}
         </FlexRow>
 
-        <Button as="a" href="#CTA-section">
+        <Button as="a" onClick={ScrollToCTA}>
           Contact us
         </Button>
       </FlexRowSpaceBetween>

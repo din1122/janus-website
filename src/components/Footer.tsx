@@ -88,7 +88,7 @@ const Footer = () => {
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Policies</FooterSectionTitle>
-            <HyperLink>Privacy Policy</HyperLink>
+            <RouterLink to="/privacy-policy">Privacy Policy</RouterLink>
             <HyperLink>
               <RouterLink to="/terms-of-use">Terms of Use</RouterLink>
             </HyperLink>

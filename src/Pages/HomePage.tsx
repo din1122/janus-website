@@ -35,6 +35,7 @@ import Button from '~/shared/Button';
 import { pageLayout } from '~/shared/LayoutStyle';
 import CookieConsentPopup from '~/components/CookieConsentPopup';
 import Header from '~/components/Header';
+import ScrollToCTA from '~/components/utils/ScrollToCTA';
 
 const HeroWrapper = styled(FlexColumn)`
   ${pageLayout}
@@ -288,7 +289,7 @@ function HomePage() {
                   development for Healthcare Providers.
                 </DescriptionText>
               </LeftTextWrapper>
-              <Button as="a" href="#CTA-section">
+              <Button as="a" onClick={ScrollToCTA}>
                 Get Janus
               </Button>
               <LogosWrapper>
@@ -380,6 +381,7 @@ function HomePage() {
       <CTASection />
 
       <CookieConsentPopup />
+      {/* <ScrollRestoration /> */}
     </>
   );
 }

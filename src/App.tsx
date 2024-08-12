@@ -1,21 +1,13 @@
-import "./App.css";
-import HomePage from "./Pages/HomePage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TermsOfUsePage from "./Pages/TermsOfUsePage";
-import Footer from "./components/Footer";
-import About from "./Pages/About";
+import './App.css';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/terms-of-use" element={<TermsOfUsePage />} />
-          <Route path="/about-us" element={<About />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Outlet />
+      <Footer />
+      <ScrollRestoration /> {/* used to scroll to top on route change */}
     </>
   );
 }
