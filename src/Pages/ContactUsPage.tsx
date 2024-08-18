@@ -25,7 +25,6 @@ const HeroSectionWrapper = styled(FlexRowMiddle)`
   padding: 180px 0;
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 6vh 2vh;
   }
 `;
 
