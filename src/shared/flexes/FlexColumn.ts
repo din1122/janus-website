@@ -5,7 +5,6 @@ import { flexCss } from './Flex';
 export const flexColumnCss = css<{ gap?: string }>`
   ${flexCss};
   flex-direction: column;
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 export const flexColumnCenterCss = css<{ gap?: string }>`

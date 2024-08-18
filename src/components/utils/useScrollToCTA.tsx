@@ -1,7 +1,7 @@
-const ScrollToCTA = () => {
+const useScrollToCTA = () => {
   document
     .getElementById('CTA-section')
     ?.scrollIntoView({ behavior: 'smooth' });
 };
 
-export default ScrollToCTA;
+export default useScrollToCTA;

@@ -70,8 +70,8 @@ const Footer = () => {
             <HyperLink>Interoperability services</HyperLink>
           </LinksContainer>
           <LinksContainer>
-            <FooterSectionTitle>About</FooterSectionTitle>
-            <HyperLink>About us</HyperLink>
+            <FooterSectionTitle>Company</FooterSectionTitle>
+            <RouterLink to="/about-us">About us</RouterLink>
             <HyperLink>Use cases</HyperLink>
             <HyperLink>Community</HyperLink>
             <HyperLink>Blog</HyperLink>
@@ -97,14 +97,25 @@ const Footer = () => {
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Socials</FooterSectionTitle>
-            <HyperLink href="https://www.youtube.com/@JanusHealth/featured">
+            <HyperLink
+              target="_blank"
+              href="https://www.youtube.com/@JanusHealth/featured"
+            >
               Youtube
             </HyperLink>
-            <HyperLink href="https://www.youtube.com/@JanusHealth/featured">
+            <HyperLink
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=61564272953399"
+            >
               Facebook
             </HyperLink>
-            <HyperLink href="https://x.com/janus_health">Twitter</HyperLink>
-            <HyperLink href="https://www.linkedin.com/company/janus-healthcare">
+            <HyperLink target="_blank" href="https://x.com/janus_health">
+              Twitter
+            </HyperLink>
+            <HyperLink
+              target="_blank"
+              href="https://www.linkedin.com/company/janus-healthcare"
+            >
               Linkedin
             </HyperLink>
             <HyperLink>Blog</HyperLink>

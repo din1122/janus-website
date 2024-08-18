@@ -11,7 +11,7 @@ import medicalProvider from '~/assets/provider-image.png';
 import medicalProviderMobile from '~/assets/mobile-medical.png';
 import medicalProviderMobile2 from '~/assets/mobile-medical-2.png';
 import providerMobile from '~/assets/mobile-provider-image.png';
-import { useMediaQuery } from 'react-responsive';
+
 import { IconRosetteDiscountCheck } from '@tabler/icons-react';
 import {
   Flex,
@@ -26,7 +26,6 @@ import {
   ColoredText,
   DescriptionText,
   HeaderTitle,
-  SectionTitle,
   Subtitle
 } from '~/shared/Texts';
 import { Circle } from '~/components/Visuals';
@@ -35,7 +34,9 @@ import Button from '~/shared/Button';
 import { pageLayout } from '~/shared/LayoutStyle';
 import CookieConsentPopup from '~/components/CookieConsentPopup';
 import Header from '~/components/Header';
-import ScrollToCTA from '~/components/utils/ScrollToCTA';
+import useScrolltoCTA from '~/components/utils/useScrollToCTA';
+import useIsTabletOrMobile from '~/components/utils/useIsTabletOrMobile';
+import SectionTitle from '~/shared/Texts/SectionTitle';
 
 const HeroWrapper = styled(FlexColumn)`
   ${pageLayout}
@@ -94,7 +95,7 @@ const float = keyframes`
 
 const FloatingCard = styled.div`
   padding: 24px;
-  width: 280px;
+  width: 310px;
   border-radius: 8px;
   background: rgba(41, 42, 61, 0.29);
   backdrop-filter: blur(8px);
@@ -106,16 +107,16 @@ const FloatingCard = styled.div`
   left: -40%;
   animation: ${float} 4s ease-in-out infinite;
   @media (max-width: 768px) {
-    width: 280px;
     left: 0;
-    bottom: 50px;
+    bottom: -20px;
   }
 `;
 
 const StyledAppImage = styled.img`
+  padding: 62px 0;
   width: 100%;
   min-width: 420px;
-  max-width: 600px;
+  max-width: 450px;
   height: auto;
   z-index: 1;
   @media (max-width: 768px) {
@@ -138,7 +139,6 @@ const InterTextSection = styled(FlexRowSpaceBetween)`
 `;
 
 const InterRightSection = styled(Flex)`
-  /* flex: 0.5; */
   width: 40%;
   @media (max-width: 768px) {
     width: 100%;
@@ -271,7 +271,7 @@ const RightSideContainer = styled.div`
 `;
 
 function HomePage() {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <>
       <Container>
@@ -289,7 +289,7 @@ function HomePage() {
                   development for Healthcare Providers.
                 </DescriptionText>
               </LeftTextWrapper>
-              <Button as="a" onClick={ScrollToCTA}>
+              <Button as="a" onClick={useScrolltoCTA}>
                 Get Janus
               </Button>
               <LogosWrapper>
@@ -381,7 +381,6 @@ function HomePage() {
       <CTASection />
 
       <CookieConsentPopup />
-      {/* <ScrollRestoration /> */}
     </>
   );
 }

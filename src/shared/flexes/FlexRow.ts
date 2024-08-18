@@ -9,20 +9,17 @@ const flexRowCss = css`
 
 const FlexRow = styled.div<{ gap?: string }>`
   ${flexRowCss};
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 export const FlexRowCenter = styled.div<{ gap?: string }>`
   ${flexRowCss};
   align-items: center;
   justify-content: center;
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 export const FlexRowMiddle = styled.div<{ gap?: string }>`
   ${flexRowCss};
   align-items: center;
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 export const flexRowSpaceBetweenCss = css`
@@ -33,7 +30,6 @@ export const flexRowSpaceBetweenCss = css`
 
 export const FlexRowSpaceBetween = styled.div<{ gap?: string }>`
   ${flexRowSpaceBetweenCss};
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 export const FlexSpaceCss = css`
@@ -42,7 +38,6 @@ export const FlexSpaceCss = css`
 
 export const FlexSpacer = styled.div<{ gap?: string }>`
   ${FlexSpaceCss}
-  ${({ gap }) => gap && `gap: ${gap}px;`}
 `;
 
 

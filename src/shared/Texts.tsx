@@ -55,7 +55,7 @@ export const HeaderTitle = styled.h1<{
   }
 `;
 
-export const ColoredText = styled.h1<{ color?: string }>`
+export const ColoredText = styled.span<{ color?: string }>`
   background: linear-gradient(90deg, #a5a8f3 -12.89%, #14151f 102.94%);
   ${({ color }) => color && `background: ${color}`};
   background-clip: text;

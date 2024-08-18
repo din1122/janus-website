@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Header from "~/components/Header";
-import { FlexColumn } from "~/shared/flexes";
-import { pageLayout } from "~/shared/LayoutStyle";
-import "./TermsOfUsePage.scss";
+import styled from 'styled-components';
+import Header from '~/components/Header';
+import { FlexColumn } from '~/shared/flexes';
+import { pageLayout } from '~/shared/LayoutStyle';
+import './TermsOfUsePage.scss';
 
 const Container = styled(FlexColumn)`
   overflow: hidden;
@@ -29,7 +29,7 @@ const TermsOfUsePage = () => {
       <Container>
         <Header />
       </Container>
-      <TermsContainer>
+      <TermsContainer className="terms-of-use-page">
         <div
           className="tab-content translations-content-item en visible"
           id="en"
@@ -101,7 +101,7 @@ const TermsOfUsePage = () => {
             </li>
             <li>
               <p>
-                <strong>Website</strong> refers to Janus, accessible from{" "}
+                <strong>Website</strong> refers to Janus, accessible from{' '}
                 <a
                   href="https://janus.ac"
                   rel="external nofollow noopener"

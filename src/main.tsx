@@ -11,17 +11,26 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import TermsOfUsePage from './Pages/TermsOfUsePage';
-import About from './Pages/About';
+import AboutUsPage from './Pages/AboutPage.tsx';
 import PrivacyPolicyPage from './Pages/PrivacyPolicyPage/PrivacyPolicyPage';
+import InsurancesPage from './Pages/InsurancesPage.tsx';
+import ProvidersPage from './Pages/ProvidersPage.tsx';
+import PatientsPage from './Pages/PatientsPage.tsx';
+import ErrorPage from './Pages/ErrorPage.tsx';
+import ContactUsPage from './Pages/ContactUsPage.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<App />}>
+      <Route path="/" element={<App />} errorElement={<ErrorPage />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
-        <Route path="/about-us" element={<About />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/patients" element={<PatientsPage />} />
+        <Route path="/providers" element={<ProvidersPage />} />
+        <Route path="/insurance-companies" element={<InsurancesPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
       </Route>
     </>
   )
