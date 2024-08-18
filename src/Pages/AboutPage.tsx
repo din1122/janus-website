@@ -34,8 +34,8 @@ const Container = styled(FlexColumn)`
 
 const HeroContainer = styled(FlexColumnCenter)`
   ${pageLayout}
-  padding: 120px 0;
-  width: 40%;
+  padding: 160px 0;
+  width: 60%;
   @media (max-width: 768px) {
     width: 100%;
     padding: 60px 20px;
