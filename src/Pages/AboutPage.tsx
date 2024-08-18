@@ -52,7 +52,14 @@ const FounderTitle = styled.p`
   font-style: italic;
 `;
 
-const SectionContainer = styled(FlexColumnCenter)`
+const SectionContainer = styled(FlexRow)`
+  ${pageLayout}
+  padding: 100px 0;
+  color: #3d3e5c;
+  align-items: start;
+`;
+
+const SectionContainerCentered = styled(FlexColumnCenter)`
   ${pageLayout}
   padding: 100px 0;
   color: #3d3e5c;
@@ -96,41 +103,41 @@ const About = () => {
         </FlexColumnCenter>
         <Circle />
       </Container>
-
-      <SectionContainer gap="48">
-        <img src={visionImage} />
-        <FlexColumnCenter gap="16">
-          <FlexColumnCenter gap="4">
-            <Subtitle>Vision</Subtitle>
-            <SectionTitle>Our Vision</SectionTitle>
+      <SectionContainer>
+        <FlexColumnCenter gap="48" style={{ flex: 1 }}>
+          <img src={visionImage} />
+          <FlexColumnCenter gap="16">
+            <FlexColumnCenter gap="4">
+              <Subtitle>Vision</Subtitle>
+              <SectionTitle>Our Vision</SectionTitle>
+            </FlexColumnCenter>
+            <DescriptionText isCentered width="60%">
+              our vision is to become the leading global provider of a secure
+              and interoperable Infrastructure Platform as a Service (IPaaS),
+              empowering organizations to seamlessly manage and scale their
+              digital ecosystems.
+            </DescriptionText>
           </FlexColumnCenter>
-          <DescriptionText isCentered width="40%">
-            our vision is to become the leading global provider of a secure and
-            interoperable Infrastructure Platform as a Service (IPaaS),
-            empowering organizations to seamlessly manage and scale their
-            digital ecosystems.
-          </DescriptionText>
+        </FlexColumnCenter>
+
+        <FlexColumnCenter gap="48" style={{ flex: 1 }}>
+          <img src={missionImage} />
+          <FlexColumnCenter gap="16">
+            <FlexColumnCenter gap="4">
+              <Subtitle>Mission</Subtitle>
+              <SectionTitle>Our Mission</SectionTitle>
+            </FlexColumnCenter>
+            <DescriptionText isCentered width="60%">
+              Simplified, Decentralized Access to Complete Patient Histories for
+              Individuals and Healthcare ProvidersSimplified, Decentralized
+              Access to Complete Patient Histories for Individuals and
+              Healthcare ProvidersSimplified, Decentralized Access to Complete
+              Patient Histories for
+            </DescriptionText>
+          </FlexColumnCenter>
         </FlexColumnCenter>
       </SectionContainer>
-
-      <SectionContainer gap="48">
-        <img src={missionImage} />
-        <FlexColumnCenter gap="16">
-          <FlexColumnCenter gap="4">
-            <Subtitle>Mission</Subtitle>
-            <SectionTitle>Our Mission</SectionTitle>
-          </FlexColumnCenter>
-          <DescriptionText isCentered width="40%">
-            Simplified, Decentralized Access to Complete Patient Histories for
-            Individuals and Healthcare ProvidersSimplified, Decentralized Access
-            to Complete Patient Histories for Individuals and Healthcare
-            ProvidersSimplified, Decentralized Access to Complete Patient
-            Histories for
-          </DescriptionText>
-        </FlexColumnCenter>
-      </SectionContainer>
-
-      <SectionContainer gap="48">
+      <SectionContainerCentered gap="48">
         <FlexColumnCenter>
           <Subtitle>Founders</Subtitle>
           <SectionTitle>The People Behind Janus</SectionTitle>
@@ -149,8 +156,8 @@ const About = () => {
           <FlexColumnCenter gap="12">
             <img src={omriImage} width={'70%'} />
             <FlexColumnCenter gap="0">
-              <FounderName>Omri Cohen</FounderName>
-              <FounderTitle>Founder,CEO</FounderTitle>
+              <FounderName>Omri Cohen.MD</FounderName>
+              <FounderTitle>Founder, CEO</FounderTitle>
             </FlexColumnCenter>
             <a
               target="_blank"
@@ -160,7 +167,7 @@ const About = () => {
             </a>
           </FlexColumnCenter>
         </FlexRow>
-      </SectionContainer>
+      </SectionContainerCentered>
       <CTASection />
     </>
   );
