@@ -3,6 +3,7 @@ import ContactForm from '~/components/ContactForm';
 import Header from '~/components/Header';
 
 import { FlexColumn, FlexRowMiddle } from '~/shared/flexes';
+import { pageLayout } from '~/shared/LayoutStyle';
 import { ColoredText, DescriptionText, Subtitle } from '~/shared/Texts';
 import SectionTitle from '~/shared/Texts/SectionTitle';
 
@@ -20,7 +21,8 @@ const Container = styled(FlexColumn)`
 `;
 
 const HeroSectionWrapper = styled(FlexRowMiddle)`
-  padding: 10vh 8vh;
+  ${pageLayout}
+  padding: 180px 0;
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 6vh 2vh;
