@@ -91,7 +91,6 @@ const HowItWorksSection = () => {
 
   const handleActiveStep = ({ step }: { step: number }) => {
     setActiveStep(step);
-    console.log(step);
   };
 
   return (

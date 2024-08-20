@@ -23,7 +23,6 @@ import CTASection from '~/components/CTASection';
 import HowItWorksSection from '~/components/HowItWorksSection';
 import './PatientsPage.scss';
 const Container = styled(FlexColumn)`
-  /* overflow: hidden; */
   margin: 28px;
   border-radius: 24px;
   background-color: #030417;
