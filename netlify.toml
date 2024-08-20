@@ -16,6 +16,7 @@ origin = "ui"
 [plugins.inputs]
 
 [build]
+publish = "dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"
