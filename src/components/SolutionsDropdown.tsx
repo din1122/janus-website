@@ -98,7 +98,7 @@ const SolutionsDropdown = () => {
         }}
       >
         <DropdownHeaderSection title={'Janus For'}>
-          <DropdownItemStyled
+          {/* <DropdownItemStyled
             as={Link}
             to="/providers"
             key="providers"
@@ -109,7 +109,7 @@ const SolutionsDropdown = () => {
             }}
           >
             <span>Providers</span>
-          </DropdownItemStyled>
+          </DropdownItemStyled> */}
           <DropdownItemStyled
             to="/patients"
             as={Link}
@@ -122,7 +122,7 @@ const SolutionsDropdown = () => {
           >
             <span>Patients</span>
           </DropdownItemStyled>
-          <DropdownItemStyled
+          {/* <DropdownItemStyled
             startContent={
               <NavigationIcon
                 src={insurance}
@@ -139,7 +139,7 @@ const SolutionsDropdown = () => {
             }}
           >
             <span>Insurance Companies</span>
-          </DropdownItemStyled>
+          </DropdownItemStyled> */}
         </DropdownHeaderSection>
       </DropdownMenuPopup>
     </Dropdown>

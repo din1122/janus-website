@@ -6,7 +6,7 @@ import janusLogo from '~/assets/janus.svg';
 import { pageLayout } from '~/shared/LayoutStyle';
 import { Link, NavLink } from 'react-router-dom';
 import useScrollToCTA from './utils/useScrollToCTA';
-// import SolutionsDropdown from './SolutionsDropdown';
+import SolutionsDropdown from './SolutionsDropdown';
 import useIsTabletOrMobile from './utils/useIsTabletOrMobile';
 import menu from '~/assets/icons/menu.svg';
 import { useState } from 'react';
@@ -96,7 +96,7 @@ const Header = () => {
                 <Link to="/" style={{ display: 'flex' }}>
                   <JanusLogo src={janusLogo} alt="janus-logo" />
                 </Link>
-                {/* <SolutionsDropdown /> */}
+                <SolutionsDropdown />
                 <HeaderLinks to="/about-us">About us</HeaderLinks>
                 <HeaderLinks to="/contact-us">Contact us</HeaderLinks>
               </FlexRow>
