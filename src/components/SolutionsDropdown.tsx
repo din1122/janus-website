@@ -6,9 +6,9 @@ import {
   DropdownSection
 } from '@nextui-org/dropdown';
 import { useState } from 'react';
-import insurance from '~/assets/icons/insurances.svg';
+// import insurance from '~/assets/icons/insurances.svg';
 import patients from '~/assets/icons/patients.svg';
-import providers from '~/assets/icons/providers.svg';
+// import providers from '~/assets/icons/providers.svg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
