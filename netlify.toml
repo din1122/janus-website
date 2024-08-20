@@ -16,7 +16,6 @@ origin = "ui"
 [plugins.inputs]
 
 [build]
-publish = "E:\\projects\\janus\\janus-website\\dist"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"
