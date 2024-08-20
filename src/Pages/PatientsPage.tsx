@@ -53,8 +53,30 @@ const SectionContainer = styled(FlexRow)<{ $padding?: string }>`
 `;
 
 const WorldWideMap = styled.img`
-  transform: translate(0, 240px);
+  transform: translate(0, 220px);
   z-index: -1;
+  position: relative;
+`;
+
+const BackDropContainer = styled(FlexColumnCenter)`
+  position: relative;
+  padding-top: 20px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(
+      190deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 73%
+    );
+    pointer-events: none;
+    /* backdrop-filter: blur(8px); */
+  }
 `;
 
 const PatientsPage = () => {
@@ -99,7 +121,7 @@ const PatientsPage = () => {
         </FlexColumnCenter>
       </SectionContainer>
       <SectionContainer>
-        <FlexRowSpaceBetween gap="145">
+        <FlexRowSpaceBetween>
           <FlexColumn style={{ flex: 1 }}>
             <img src={dataStandardization} width={'80%'} />
           </FlexColumn>
@@ -117,14 +139,16 @@ const PatientsPage = () => {
       <SectionContainer $padding="0 0 120px 0 ">
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
           <WorldWideMap src={worldWideMap} width={'80%'} />
-          <Subtitle>Consent Management</Subtitle>
-          <SectionTitle>It’s Your Data</SectionTitle>
-          <DescriptionText isCentered width="60%">
-            Janus puts you in control of what you share. Share a secured link to
-            a single or all your medical records easily from your phone to any
-            individual. Allowing you to safely travel and get the continuity of
-            care you need anywhere in the world.
-          </DescriptionText>
+          <BackDropContainer>
+            <FlexColumnCenter gap="0">
+              <Subtitle>Global Health Portability</Subtitle>
+              <SectionTitle>Travel anywhere, with your records.</SectionTitle>
+            </FlexColumnCenter>
+            <DescriptionText isCentered width="60%">
+              With Janus you can travel or relocate to anywhere in the world
+              with all your medical history.
+            </DescriptionText>
+          </BackDropContainer>
         </FlexColumnCenter>
       </SectionContainer>
       <CTASection />
