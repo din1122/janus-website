@@ -64,27 +64,27 @@ const Footer = () => {
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Solutions</FooterSectionTitle>
-            <HyperLink>For Medical Providers</HyperLink>
-            <HyperLink>For Patients</HyperLink>
-            <HyperLink>For insurance companies</HyperLink>
-            <HyperLink>Interoperability services</HyperLink>
+            <RouterLink to="/in-progress">For Medical Providers</RouterLink>
+            <RouterLink to="/in-progress">For Patients</RouterLink>
+            <RouterLink to="/in-progress">For insurance companies</RouterLink>
+            <RouterLink to="/in-progress">Interoperability services</RouterLink>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Company</FooterSectionTitle>
             <RouterLink to="/about-us">About us</RouterLink>
-            <HyperLink>Use cases</HyperLink>
-            <HyperLink>Community</HyperLink>
-            <HyperLink>Blog</HyperLink>
-            <HyperLink>Media</HyperLink>
+            <RouterLink to="/in-progress">Use cases</RouterLink>
+            <RouterLink to="/in-progress">Community</RouterLink>
+            <RouterLink to="/in-progress">Blog</RouterLink>
+            <RouterLink to="/in-progress">Media</RouterLink>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Support</FooterSectionTitle>
-            <HyperLink>Contact us</HyperLink>
-            <HyperLink>Help Center</HyperLink>
-            <HyperLink>Resource Center</HyperLink>
-            <HyperLink>API Docs</HyperLink>
-            <HyperLink>FQA</HyperLink>
-            <HyperLink>Feature Requests</HyperLink>
+            <RouterLink to="/in-progress">Contact us</RouterLink>
+            <RouterLink to="/in-progress">Help Center</RouterLink>
+            <RouterLink to="/in-progress">Resource Center</RouterLink>
+            <RouterLink to="/in-progress">API Docs</RouterLink>
+            <RouterLink to="/in-progress">FQA</RouterLink>
+            <RouterLink to="/in-progress">Feature Requests</RouterLink>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Policies</FooterSectionTitle>
@@ -92,8 +92,8 @@ const Footer = () => {
             <HyperLink>
               <RouterLink to="/terms-of-use">Terms of Use</RouterLink>
             </HyperLink>
-            <HyperLink>Security</HyperLink>
-            <HyperLink>Policies</HyperLink>
+            <RouterLink to="/in-progress">Security</RouterLink>
+            <RouterLink to="/in-progress">Policies</RouterLink>
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Socials</FooterSectionTitle>
@@ -118,8 +118,8 @@ const Footer = () => {
             >
               Linkedin
             </HyperLink>
-            <HyperLink>Blog</HyperLink>
-            <HyperLink>Github</HyperLink>
+            <RouterLink to="/in-progress">Blog</RouterLink>
+            <RouterLink to="/in-progress">Github</RouterLink>
           </LinksContainer>
         </LinksSectionContainer>
         <FlexColumn style={{ padding: '0 0 18px 0', gap: '18px' }}>

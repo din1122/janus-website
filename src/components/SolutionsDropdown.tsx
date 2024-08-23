@@ -13,9 +13,19 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const DropdownTriggerElement = styled(DropdownTrigger)<{ isOpen?: boolean }>`
-  padding: 4px 10px;
+  color: #f0f0f5;
+  padding: 4px 12px;
   border-radius: 4px;
+  transition: 0.1s;
   cursor: pointer;
+  &:hover {
+    background: #292a3d;
+    transition: 0.1s;
+  }
+  &:active {
+    background: #14151f;
+    color: white;
+  }
   ${props =>
     props.isOpen &&
     `

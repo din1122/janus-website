@@ -18,6 +18,7 @@ import ProvidersPage from './Pages/ProvidersPage.tsx';
 import PatientsPage from './Pages/PatientsPage.tsx';
 import ErrorPage from './Pages/ErrorPage.tsx';
 import ContactUsPage from './Pages/ContactUsPage.tsx';
+import InProgressPage from './Pages/InProgressPage.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
         <Route path="/insurance-companies" element={<InsurancesPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+        <Route path="/in-progress" element={<InProgressPage />} />
       </Route>
     </>
   )
