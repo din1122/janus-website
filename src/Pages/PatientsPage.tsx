@@ -15,8 +15,10 @@ import {
   SectionTitle,
   Subtitle
 } from '~/shared/Texts';
-
+import useIsTabletOrMobile from '~/components/utils/useIsTabletOrMobile';
+import summaryPage from '~/assets/patients-page/mobile/medicalmobile.png';
 import tempDragMedicalRecords from '~/assets/patients-page/temp-drag-medical-records.png';
+import tempDragMedicalRecordsMobile from '~/assets/patients-page/mobile/your-data.png';
 import dataStandardization from '~/assets/patients-page/data-standartization.png';
 import worldWideMap from '~/assets/patients-page/worldmap.svg';
 import CTASection from '~/components/CTASection';
@@ -55,6 +57,10 @@ const WorldWideMap = styled.img`
   transform: translate(0, 220px);
   z-index: -1;
   position: relative;
+  @media (max-width: 768px) {
+    transform: translate(0, 40px);
+    width: 100%;
+  }
 `;
 
 const BackDropContainer = styled(FlexColumnCenter)`
@@ -81,29 +87,33 @@ const ImageElement = styled.img<{ $width?: string }>`
 `;
 
 const PatientsPage = () => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <>
       <Container>
         <Header />
-
         <FlexColumnCenter
           style={{ width: '80%', margin: 'auto', padding: '120px 0 ' }}
           gap="24"
         >
           <Subtitle>For Patients</Subtitle>
           <HeaderTitle isCentered isWhite>
-            Your <ColoredText>full medical history</ColoredText>
-            <br></br> at your fingertips
+            Your <ColoredText>full medical history</ColoredText> at your
+            fingertips
           </HeaderTitle>
           <DescriptionText IsWhite isCentered width="70%">
             Access, aggregate, and share all your medical records easily from
             your phone with Janus. Get the continuity of care you deserve
             anywhere in the world, without bureaucratic burdens.
           </DescriptionText>
-          <PatientsPageMedicalImg
-            src={patiantsPageMedical}
-            alt="Patients Page Medical"
-          />
+          {!isTabletOrMobile ? (
+            <PatientsPageMedicalImg
+              src={patiantsPageMedical}
+              alt="Patients Page Medical"
+            />
+          ) : (
+            <ImageElement src={summaryPage} alt="Summary Page" />
+          )}
         </FlexColumnCenter>
       </Container>
       <HowItWorksSection />
@@ -118,24 +128,54 @@ const PatientsPage = () => {
             individual. Allowing you to safely travel and get the continuity of
             care you need anywhere in the world.
           </DescriptionText>
-          <img src={tempDragMedicalRecords} width={'70%'} />
+          {isTabletOrMobile ? (
+            <ImageElement
+              src={tempDragMedicalRecordsMobile}
+              alt="Summary Page"
+            />
+          ) : (
+            <ImageElement
+              src={tempDragMedicalRecords}
+              alt="Summary Page"
+              width={'70%'}
+            />
+          )}
         </FlexColumnCenter>
       </SectionContainer>
       <SectionContainer $padding="70px 0">
-        <FlexRowSpaceBetween>
-          <FlexColumn style={{ flex: 1 }}>
-            <img src={dataStandardization} width={'80%'} />
+        {isTabletOrMobile ? (
+          <FlexColumn>
+            <FlexColumn style={{ flex: 1 }}>
+              <Subtitle>Data Standaratization</Subtitle>
+              <SectionTitle>Health Record Aggregation</SectionTitle>
+              <DescriptionText>
+                All your health records in a single place. Forget handling
+                binders or taking a the day off to go to your provider to get
+                that paper. All your records will be securely accessible in a
+                single app.
+              </DescriptionText>
+            </FlexColumn>
+            <FlexColumn style={{ flex: 1 }}>
+              <img src={dataStandardization} />
+            </FlexColumn>
           </FlexColumn>
-          <FlexColumn style={{ flex: 1 }}>
-            <Subtitle>Data Standaratization</Subtitle>
-            <SectionTitle>Health Record Aggregation</SectionTitle>
-            <DescriptionText>
-              All your health records in a single place. Forget handling binders
-              or taking a the day off to go to your provider to get that paper.
-              All your records will be securely accessible in a single app.
-            </DescriptionText>
-          </FlexColumn>
-        </FlexRowSpaceBetween>
+        ) : (
+          <FlexRowSpaceBetween>
+            <FlexColumn style={{ flex: 1 }}>
+              <img src={dataStandardization} width={'80%'} />
+            </FlexColumn>
+            <FlexColumn style={{ flex: 1 }}>
+              <Subtitle>Data Standaratization</Subtitle>
+              <SectionTitle>Health Record Aggregation</SectionTitle>
+              <DescriptionText>
+                All your health records in a single place. Forget handling
+                binders or taking a the day off to go to your provider to get
+                that paper. All your records will be securely accessible in a
+                single app.
+              </DescriptionText>
+            </FlexColumn>
+          </FlexRowSpaceBetween>
+        )}
       </SectionContainer>
       <SectionContainer $padding="0 0 120px 0 ">
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
@@ -143,7 +183,9 @@ const PatientsPage = () => {
           <BackDropContainer>
             <FlexColumnCenter gap="0">
               <Subtitle>Global Health Portability</Subtitle>
-              <SectionTitle>Travel anywhere, with your records.</SectionTitle>
+              <SectionTitle isCentered>
+                Travel anywhere, with your records.
+              </SectionTitle>
             </FlexColumnCenter>
             <DescriptionText isCentered width="60%">
               With Janus you can travel or relocate to anywhere in the world
