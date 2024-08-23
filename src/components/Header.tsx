@@ -80,6 +80,7 @@ const MobileNavigationMenu = styled.div`
   left: 0;
   width: 100%;
   padding: 12px;
+  z-index: 99;
 `;
 const Header = () => {
   const isTabletOrMobile = useIsTabletOrMobile();
@@ -132,6 +133,12 @@ const Header = () => {
             onClick={() => setIsOpenMenu(prev => !prev)}
           >
             Contact us
+          </HeaderLinks>
+          <HeaderLinks
+            to="/patients"
+            onClick={() => setIsOpenMenu(prev => !prev)}
+          >
+            Patients
           </HeaderLinks>
         </MobileNavigationMenu>
       )}

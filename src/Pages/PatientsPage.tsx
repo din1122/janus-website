@@ -35,7 +35,7 @@ const Container = styled(FlexColumn)`
   }
 `;
 
-const PatiantsPageMedicalImg = styled.img`
+const PatientsPageMedicalImg = styled.img`
   bottom: 0;
   width: 100%;
   max-width: 1400px;
@@ -74,8 +74,10 @@ const BackDropContainer = styled(FlexColumnCenter)`
       rgba(255, 255, 255, 1) 73%
     );
     pointer-events: none;
-    /* backdrop-filter: blur(8px); */
   }
+`;
+const ImageElement = styled.img<{ $width?: string }>`
+  width: ${({ $width }) => $width};
 `;
 
 const PatientsPage = () => {
@@ -89,7 +91,7 @@ const PatientsPage = () => {
           gap="24"
         >
           <Subtitle>For Patients</Subtitle>
-          <HeaderTitle isCentered>
+          <HeaderTitle isCentered isWhite>
             Your <ColoredText>full medical history</ColoredText>
             <br></br> at your fingertips
           </HeaderTitle>
@@ -98,7 +100,7 @@ const PatientsPage = () => {
             your phone with Janus. Get the continuity of care you deserve
             anywhere in the world, without bureaucratic burdens.
           </DescriptionText>
-          <PatiantsPageMedicalImg
+          <PatientsPageMedicalImg
             src={patiantsPageMedical}
             alt="Patients Page Medical"
           />

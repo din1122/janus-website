@@ -249,10 +249,6 @@ const LeftSideWrapper = styled(FlexColumn)`
 
   @media (max-width: 768px) {
     width: 90%;
-    h1 {
-      font-size: 36px;
-      line-height: 1;
-    }
     h3 {
       font-size: 16px;
       width: 90%;

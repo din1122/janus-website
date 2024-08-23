@@ -65,7 +65,7 @@ const Footer = () => {
           <LinksContainer>
             <FooterSectionTitle>Solutions</FooterSectionTitle>
             <RouterLink to="/in-progress">For Medical Providers</RouterLink>
-            <RouterLink to="/in-progress">For Patients</RouterLink>
+            <RouterLink to="/patients">For Patients</RouterLink>
             <RouterLink to="/in-progress">For insurance companies</RouterLink>
             <RouterLink to="/in-progress">Interoperability services</RouterLink>
           </LinksContainer>

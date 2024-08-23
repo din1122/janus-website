@@ -51,7 +51,7 @@ export const HeaderTitle = styled.h1<{
   ${({ isCentered }) => isCentered && 'text-align: center;'}
   ${({ isWhite }) => isWhite && 'color: #fff;'}
   @media (max-width: 768px) {
-    font-size: 34px;
+    font-size: 46px;
   }
 `;
 
