@@ -106,7 +106,7 @@ const PatientsPage = () => {
       </Container>
       <HowItWorksSection />
 
-      <SectionContainer>
+      <SectionContainer $padding="50px 0">
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
           <Subtitle>Consent Management</Subtitle>
           <SectionTitle>It’s Your Data</SectionTitle>
@@ -119,7 +119,7 @@ const PatientsPage = () => {
           <img src={tempDragMedicalRecords} width={'70%'} />
         </FlexColumnCenter>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer $padding="70px 0">
         <FlexRowSpaceBetween>
           <FlexColumn style={{ flex: 1 }}>
             <img src={dataStandardization} width={'80%'} />

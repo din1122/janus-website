@@ -149,7 +149,7 @@ const About = () => {
               <FounderName>Din Ashkenazi</FounderName>
               <FounderTitle>Co-Founder, COO</FounderTitle>
             </FlexColumnCenter>
-            <a target="_blank" href="https://www.linkedin.com/in/omricoh/">
+            <a target="_blank" href="https://www.linkedin.com/in/dinashk/">
               <IconBrandLinkedin />
             </a>
           </FlexColumnCenter>
@@ -159,10 +159,7 @@ const About = () => {
               <FounderName>Omri Cohen.MD</FounderName>
               <FounderTitle>Founder, CEO</FounderTitle>
             </FlexColumnCenter>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/din-ashkenazi/"
-            >
+            <a target="_blank" href="https://www.linkedin.com/in/omricoh/">
               <IconBrandLinkedin />
             </a>
           </FlexColumnCenter>
