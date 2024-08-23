@@ -20,6 +20,7 @@ import summaryPage from '~/assets/patients-page/mobile/medicalmobile.png';
 import tempDragMedicalRecords from '~/assets/patients-page/temp-drag-medical-records.png';
 import tempDragMedicalRecordsMobile from '~/assets/patients-page/mobile/your-data.png';
 import dataStandardization from '~/assets/patients-page/data-standartization.png';
+import dataStandardizationMobile from '~/assets/patients-page/mobile/data-strandartization.png';
 import worldWideMap from '~/assets/patients-page/worldmap.svg';
 import CTASection from '~/components/CTASection';
 import HowItWorksSection from '~/components/HowItWorksSection';
@@ -156,7 +157,12 @@ const PatientsPage = () => {
               </DescriptionText>
             </FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
-              <img src={dataStandardization} />
+              $
+              {isTabletOrMobile ? (
+                <img src={dataStandardizationMobile} />
+              ) : (
+                <img src={dataStandardization} />
+              )}
             </FlexColumn>
           </FlexColumn>
         ) : (
