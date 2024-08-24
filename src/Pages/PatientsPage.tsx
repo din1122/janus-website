@@ -138,7 +138,7 @@ const PatientsPage = () => {
             <ImageElement
               src={tempDragMedicalRecords}
               alt="Summary Page"
-              width={'70%'}
+              width={'60%'}
             />
           )}
         </FlexColumnCenter>
@@ -157,7 +157,6 @@ const PatientsPage = () => {
               </DescriptionText>
             </FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
-              $
               {isTabletOrMobile ? (
                 <img src={dataStandardizationMobile} />
               ) : (
