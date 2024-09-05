@@ -23,10 +23,10 @@ import {
 } from '~/shared/flexes';
 import CTASection from '~/components/CTASection';
 import {
-  ColoredText,
   DescriptionText,
   HeaderTitle,
-  Subtitle
+  Subtitle,
+  WhiteColoredText
 } from '~/shared/Texts';
 import { Circle } from '~/components/Visuals';
 import Button from '~/shared/Button';
@@ -183,7 +183,6 @@ const ForMedicalProvidersContainer = styled(FlexMiddle)`
   padding:120px 0;
   ${VisualContainer} {
     justify-content: end;
-    /* margin-left:auto; */
   }
   ${MedicalTextSection} {
     gap: 24px;
@@ -276,8 +275,10 @@ function HomePage() {
           <HeroContainer>
             <LeftSideWrapper>
               <LeftTextWrapper>
-                <HeaderTitle isWhite>
-                  <ColoredText>Empowering</ColoredText> Healthcare
+                <HeaderTitle isWhite $width="80%">
+                  <WhiteColoredText>
+                    Seamless access to medical data
+                  </WhiteColoredText>
                 </HeaderTitle>
                 <DescriptionText IsWhite width="80%">
                   Enabling seamless access to Complete Patient History for
@@ -304,6 +305,16 @@ function HomePage() {
               </FloatingCard>
               <StyledAppImage src={appImage} />
             </RightSideContainer>
+            <Circle
+              style={{
+                left: 0,
+                top: 0,
+                zIndex: 1,
+                height: '600px',
+                width: '600px',
+                opacity: 0.4
+              }}
+            />
             <Circle />
           </HeroContainer>
           <InterSection>
@@ -332,7 +343,7 @@ function HomePage() {
       </Container>
       <ForIndividualsContainer>
         <SectionTitleWrapper style={{ alignItems: 'center' }}>
-          <Subtitle>For Individuals</Subtitle>
+          <Subtitle>For Patients</Subtitle>
           <SectionTitle isCentered>Full medical history access</SectionTitle>
         </SectionTitleWrapper>
         <DescriptionText isCentered width="50%">
@@ -341,6 +352,9 @@ function HomePage() {
           care you deserve from anywhere in the world avoiding the bureaucratic
           burden.
         </DescriptionText>
+        <Button as="a" href="/patients" dark>
+          Learn More
+        </Button>
         <VisualContainer>
           {!isTabletOrMobile && (
             <img src={medicalHistory} alt="" width={'80%'} />
@@ -364,6 +378,9 @@ function HomePage() {
             Connect to payer directly, Access full patient histories, improve
             diagnosis accuracy and patient trust.
           </DescriptionText>
+          <Button as="a" href="/providers" dark>
+            Learn More
+          </Button>
         </MedicalTextSection>
         <VisualContainer>
           {!isTabletOrMobile && (

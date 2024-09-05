@@ -8,24 +8,28 @@ import {
 import { useState } from 'react';
 // import insurance from '~/assets/icons/insurances.svg';
 import patients from '~/assets/icons/patients.svg';
-// import providers from '~/assets/icons/providers.svg';
+import providers from '~/assets/icons/providers.svg';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const DropdownTriggerElement = styled(DropdownTrigger)<{ isOpen?: boolean }>`
-  color: #f0f0f5;
+const DropdownTriggerElement = styled(DropdownTrigger)<{
+  isOpen?: boolean;
+  $isblack: boolean;
+}>`
+  color: ${({ $isblack }) => ($isblack ? '#292a3d' : '#f0f0f5')};
   padding: 4px 12px;
   border-radius: 4px;
   transition: 0.1s;
   cursor: pointer;
   &:hover {
     background: #292a3d;
+    color: #f0f0f5;
     transition: 0.1s;
   }
-  &:active {
+  /* &:active {
     background: #14151f;
     color: white;
-  }
+  } */
   ${props =>
     props.isOpen &&
     `
@@ -51,6 +55,7 @@ const DropdownMenuPopup = styled(DropdownMenu)`
   padding: 8px;
   color: black;
   transform: translate(160px, 0px);
+  box-shadow: 0px 0px 4px 0px #d2d3f9;
   width: 415px;
   li > span:nth-child(1) {
     font-size: 12px;
@@ -88,12 +93,13 @@ const DropdownMenuPopup = styled(DropdownMenu)`
 
 const DropdownHeaderSection = styled(DropdownSection)``;
 
-const SolutionsDropdown = () => {
+const SolutionsDropdown = ({ isBlack }: { isBlack: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Dropdown isOpen={isOpen}>
       <DropdownTriggerElement
+        $isblack={isBlack}
         $isOpen={isOpen}
         onMouseEnter={() => {
           setIsOpen(prev => !prev);
@@ -108,7 +114,7 @@ const SolutionsDropdown = () => {
         }}
       >
         <DropdownHeaderSection title={'Janus For'}>
-          {/* <DropdownItemStyled
+          <DropdownItemStyled
             as={Link}
             to="/providers"
             key="providers"
@@ -119,7 +125,7 @@ const SolutionsDropdown = () => {
             }}
           >
             <span>Providers</span>
-          </DropdownItemStyled> */}
+          </DropdownItemStyled>
           <DropdownItemStyled
             to="/patients"
             as={Link}

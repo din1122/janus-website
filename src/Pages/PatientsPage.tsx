@@ -3,13 +3,10 @@ import Header from '~/components/Header';
 import {
   FlexColumn,
   FlexColumnCenter,
-  FlexRow,
   FlexRowSpaceBetween
 } from '~/shared/flexes';
-import { pageLayout } from '~/shared/LayoutStyle';
 import patiantsPageMedical from '~/assets/patients-page/patients-page-medical.png';
 import {
-  ColoredText,
   DescriptionText,
   HeaderTitle,
   SectionTitle,
@@ -24,7 +21,8 @@ import dataStandardizationMobile from '~/assets/patients-page/mobile/data-strand
 import worldWideMap from '~/assets/patients-page/worldmap.svg';
 import CTASection from '~/components/CTASection';
 import HowItWorksSection from '~/components/HowItWorksSection';
-import './PatientsPage.scss';
+import { SectionContainer } from '~/shared/SectionContainer';
+
 const Container = styled(FlexColumn)`
   margin: 28px;
   border-radius: 24px;
@@ -38,20 +36,18 @@ const Container = styled(FlexColumn)`
   }
 `;
 
+const PatinetsHeroSection = styled(FlexColumnCenter)`
+  width: 80%;
+  margin: auto;
+  padding: 100px 0;
+`;
+
 const PatientsPageMedicalImg = styled.img`
   bottom: 0;
   width: 100%;
   max-width: 1400px;
   transform: translate(-30px, 300px);
   margin-top: -250px;
-`;
-
-const SectionContainer = styled(FlexRow)<{ $padding?: string }>`
-  ${pageLayout}
-  padding: 100px 0;
-  color: #3d3e5c;
-  align-items: start;
-  ${({ $padding }) => $padding && `padding: ${$padding};`}
 `;
 
 const WorldWideMap = styled.img`
@@ -83,6 +79,7 @@ const BackDropContainer = styled(FlexColumnCenter)`
     pointer-events: none;
   }
 `;
+
 const ImageElement = styled.img<{ $width?: string }>`
   width: ${({ $width }) => $width};
 `;
@@ -93,14 +90,10 @@ const PatientsPage = () => {
     <>
       <Container>
         <Header />
-        <FlexColumnCenter
-          style={{ width: '80%', margin: 'auto', padding: '120px 0 ' }}
-          gap="24"
-        >
+        <PatinetsHeroSection gap="12">
           <Subtitle>For Patients</Subtitle>
           <HeaderTitle isCentered isWhite>
-            Your <ColoredText>full medical history</ColoredText> at your
-            fingertips
+            Your Medical History at Your Fingertips
           </HeaderTitle>
           <DescriptionText IsWhite isCentered width="70%">
             Access, aggregate, and share all your medical records easily from
@@ -115,7 +108,7 @@ const PatientsPage = () => {
           ) : (
             <ImageElement src={summaryPage} alt="Summary Page" />
           )}
-        </FlexColumnCenter>
+        </PatinetsHeroSection>
       </Container>
       <HowItWorksSection />
 

@@ -79,7 +79,7 @@ const ContactForm = () => {
             <StyledTextArea name="email" rows={6} />
           </FlexColumn>
 
-          <Button black fullwidth type="submit">
+          <Button dark fullwidth type="submit">
             Send
           </Button>
         </FlexColumn>

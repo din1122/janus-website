@@ -174,7 +174,7 @@ const HowItWorksSection = () => {
                 />
               ))}
             </FlexColumn>
-            <FlexColumn gap="80">
+            <FlexColumn gap="24">
               {Sections.map(({ title, description }, index) => (
                 <StepTextWrapper
                   key={index}

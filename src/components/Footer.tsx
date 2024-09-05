@@ -4,6 +4,7 @@ import negativeJanusLogo from '~/assets/logo-negative.svg';
 import { Divider } from '../shared/Divider';
 import { pageLayout } from '../shared/LayoutStyle';
 import { Link } from 'react-router-dom';
+import useIsTabletOrMobile from './utils/useIsTabletOrMobile';
 
 const FooterContainer = styled.div`
   background: linear-gradient(180deg, #fff 33.33%, #e0e1eb 100%);
@@ -50,6 +51,7 @@ const RouterLink = styled(Link)`
 `;
 
 const Footer = () => {
+  const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <FooterContainer>
       <FooterWrapper>
@@ -64,7 +66,9 @@ const Footer = () => {
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Solutions</FooterSectionTitle>
-            <RouterLink to="/in-progress">For Medical Providers</RouterLink>
+            {!isTabletOrMobile && (
+              <RouterLink to="/providers">For Medical Providers</RouterLink>
+            )}
             <RouterLink to="/patients">For Patients</RouterLink>
             <RouterLink to="/in-progress">For insurance companies</RouterLink>
             <RouterLink to="/in-progress">Interoperability services</RouterLink>
