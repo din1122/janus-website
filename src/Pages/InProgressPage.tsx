@@ -33,7 +33,7 @@ const TextWrapper = styled.div`
   h3 {
     font-weight: 400;
     font-size: 18px;
-    width: 60%;
+    width: 80%;
     text-align: center;
   }
   @media (max-width: 768px) {
@@ -68,7 +68,8 @@ function InProgressPage() {
         <TextWrapper>
           <h1>Good things are on the way</h1>
           <h3>
-            Hey! Our site is undergoing a maintenance. please com back later.
+            Hey! Our site is undergoing a maintenance. please come back later.
+            <br></br>
             Thank you for your patience
           </h3>
         </TextWrapper>

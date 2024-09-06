@@ -28,6 +28,7 @@ import tags from '~/assets/providers-page/tags.png';
 import benefitsClinical from '~/assets/providers-page/benefits-clinical.png';
 import CTASection from '~/components/CTASection';
 import benefitsFinancial from '~/assets/providers-page/benefits-financial.png';
+import textShape from '~/assets/providers-page/textShape.png';
 import Button from '~/shared/Button';
 import useScrollToCTA from '~/components/utils/useScrollToCTA';
 
@@ -163,6 +164,12 @@ const BenefitsFinancial = styled.img.attrs({ src: benefitsFinancial })`
   bottom: 0;
   right: 0;
   width: 80%;
+`;
+const TextShape = styled.img.attrs({ src: textShape })`
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 370px;
 `;
 
 const ProvidersPage = () => {
@@ -337,7 +344,10 @@ const ProvidersPage = () => {
                     errors.
                   </BenefitsDescription>
                 </FlexColumn>
-                <img src={benefitsClinical} />
+                <div style={{ position: 'relative' }}>
+                  <img src={benefitsClinical} />
+                  <TextShape />
+                </div>
               </FlexColumn>
               <Circle style={{ zIndex: 0, bottom: 0, right: '-200px' }} />
             </Clinical>

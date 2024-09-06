@@ -5,7 +5,7 @@ export const DescriptionText = styled.p<{
   isCentered?: boolean;
   width?: string;
 }>`
-  color: #14151f;
+  color: #3d3e5c;
   font-size: 18px;
   line-height: 200%;
   ${({ width }) =>

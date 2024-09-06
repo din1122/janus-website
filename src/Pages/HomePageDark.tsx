@@ -265,7 +265,7 @@ const RightSideContainer = styled.div`
   }
 `;
 
-function HomePage() {
+function DarkHomePage() {
   const isTabletOrMobile = useIsTabletOrMobile();
   return (
     <>
@@ -398,4 +398,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default DarkHomePage;

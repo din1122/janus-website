@@ -19,12 +19,14 @@ import PatientsPage from './Pages/PatientsPage.tsx';
 import ErrorPage from './Pages/ErrorPage.tsx';
 import ContactUsPage from './Pages/ContactUsPage.tsx';
 import InProgressPage from './Pages/InProgressPage.tsx';
+import DarkHomePage from '~/Pages/HomePageDark.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />} errorElement={<ErrorPage />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/dark-home-page" element={<DarkHomePage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/patients" element={<PatientsPage />} />
