@@ -169,7 +169,7 @@ const ProvidersPage = () => {
   return (
     <>
       <Container>
-        <Header isBlack />
+        <Header dark />
         <FlexColumnCenter>
           <HeroContainer gap="24">
             <FlexColumnCenter gap="4">

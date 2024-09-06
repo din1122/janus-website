@@ -9,11 +9,12 @@ import { Link, NavLink } from 'react-router-dom';
 import useScrollToCTA from './utils/useScrollToCTA';
 import SolutionsDropdown from './SolutionsDropdown';
 import useIsTabletOrMobile from './utils/useIsTabletOrMobile';
-import menu from '~/assets/icons/menu.svg';
+// import menu from '~/assets/icons/menu.svg';
+import menu from '~/assets/icons/menu-dark.svg';
 import { useState } from 'react';
 import JanusLogo from './JanusLogo.tsx/JanusLogo';
 
-const StyledHeader = styled.div<{ $isblack?: boolean }>`
+const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: start;
@@ -29,8 +30,8 @@ const StyledHeader = styled.div<{ $isblack?: boolean }>`
   }
 `;
 
-const HeaderLinks = styled(NavLink)<{ $isblack: boolean }>`
-  color: ${({ $isblack }) => ($isblack ? '#292a3d' : '#f0f0f5')};
+const HeaderLinks = styled(NavLink)<{ $dark: boolean }>`
+  color: ${({ $dark }) => ($dark ? '#292a3d' : '#f0f0f5')};
   padding: 4px 12px;
   border-radius: 4px;
   transition: 0.1s;
@@ -51,8 +52,12 @@ const MenuButton = styled.img`
   width: 40px;
   padding: 4px;
   border-radius: 4px;
+  color: #14151f;
+  svg {
+    fill: #14151f;
+  }
   &:hover {
-    color: #f0f0f5;
+    color: #14151f;
     cursor: pointer;
   }
   &:active {
@@ -75,26 +80,25 @@ const MobileNavigationMenu = styled.div`
   padding: 12px;
   z-index: 99;
 `;
-const Header = ({ isBlack = false }: { isBlack?: boolean }) => {
+const Header = ({ dark = false }: { dark?: boolean }) => {
   const isTabletOrMobile = useIsTabletOrMobile();
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-  console.log(isBlack);
   return (
     <>
-      <StyledHeader $isblack={isBlack}>
+      <StyledHeader>
         <FlexRowSpaceBetween style={{ width: '100%' }}>
           {!isTabletOrMobile ? (
             <>
               <FlexRow gap="24">
                 <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                  <JanusLogo isblack={isBlack} />
+                  <JanusLogo isblack={dark} />
                 </Link>
-                <SolutionsDropdown isBlack={isBlack} />
-                <HeaderLinks $isblack={isBlack} to="/about-us">
+                <SolutionsDropdown isBlack={dark} />
+                <HeaderLinks $dark={dark} to="/about-us">
                   About us
                 </HeaderLinks>
-                <HeaderLinks $isblack={isBlack} to="/contact-us">
+                <HeaderLinks $dark={dark} to="/contact-us">
                   Contact us
                 </HeaderLinks>
               </FlexRow>
@@ -105,8 +109,9 @@ const Header = ({ isBlack = false }: { isBlack?: boolean }) => {
           ) : (
             <>
               <Link to="/" style={{ display: 'flex' }}>
-                {/* <JanusLogo src={janusLogo} /> */}
+                <JanusLogo isblack={dark} />
               </Link>
+
               <MenuButton
                 src={menu}
                 width="40%"
@@ -120,7 +125,7 @@ const Header = ({ isBlack = false }: { isBlack?: boolean }) => {
       {isOpenMenu && (
         <MobileNavigationMenu>
           <HeaderLinks
-            $isblack={isBlack}
+            $dark={dark}
             to="/about-us"
             onClick={() => setIsOpenMenu(prev => !prev)}
           >
@@ -134,7 +139,7 @@ const Header = ({ isBlack = false }: { isBlack?: boolean }) => {
             Contact us
           </HeaderLinks> */}
           <HeaderLinks
-            $isblack={isBlack}
+            $dark={dark}
             to="/patients"
             onClick={() => setIsOpenMenu(prev => !prev)}
           >

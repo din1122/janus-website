@@ -4,9 +4,8 @@ import appImage from '~/assets/app.png';
 import HL7FHIR from '~/assets/logos/HL7FHIR.png';
 import indy from '~/assets/logos/indy.png';
 import linux from '~/assets/logos/linux.svg';
-import fhirDiagram from '~/assets/home-page/fhir-diagram.png';
-import fhirDiagramMobile from '~/assets/home-page/mobile-fhir.png';
-
+import fhirDiagram from '~/assets/fhir-diagram.png';
+import fhirDiagramMobile from '~/assets/fhir-diagram-mobile.png';
 import medicalHistory from '~/assets/medical.png';
 import medicalProvider from '~/assets/provider-image.png';
 import medicalProviderMobile from '~/assets/mobile-medical.png';
@@ -24,10 +23,10 @@ import {
 } from '~/shared/flexes';
 import CTASection from '~/components/CTASection';
 import {
-  ColoredText,
   DescriptionText,
   HeaderTitle,
-  Subtitle
+  Subtitle,
+  WhiteColoredText
 } from '~/shared/Texts';
 import { Circle } from '~/components/Visuals';
 import Button from '~/shared/Button';
@@ -47,25 +46,17 @@ const HeroWrapper = styled(FlexColumn)`
 `;
 
 const Container = styled(FlexColumn)`
-  padding: 0 0 32px 0;
+  overflow: hidden;
   margin: 28px;
   border-radius: 24px;
-  background-color: #f9f9fb;
+  background-color: #030417;
   justify-content: center;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
   @media (max-width: 768px) {
     margin: 16px;
     border-radius: 16px;
   }
-`;
-
-const CircleTwo = styled(Circle)`
-  z-index: 0;
-  bottom: -500px;
-  opacity: 0.5;
-  left: 0;
 `;
 
 const HeroContainer = styled.div`
@@ -76,6 +67,7 @@ const HeroContainer = styled.div`
   width: 100%;
   margin: 0 auto auto auto;
   box-sizing: border-box;
+  /* height: 100vh; */
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 24px 0%;
@@ -105,7 +97,7 @@ const FloatingCard = styled.div`
   padding: 24px;
   width: 310px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.29);
+  background: rgba(41, 42, 61, 0.29);
   backdrop-filter: blur(8px);
   display: flex;
   gap: 8px;
@@ -117,21 +109,6 @@ const FloatingCard = styled.div`
   @media (max-width: 768px) {
     left: 0;
     bottom: -20px;
-  }
-`;
-
-const CardTexts = styled(FlexColumn)`
-  gap: 8px;
-  span {
-    font-size: 12px;
-    color: #a5a8f3;
-  }
-  p {
-    color: #3d3e5c;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1;
-    margin: 0;
   }
 `;
 
@@ -245,8 +222,23 @@ const FHIRDiagram = styled(FlexColumn)`
     @media (max-width: 768px) {
       transform: translateX(0);
       display: block;
-      width: 305px;
+      width: 405px;
     }
+  }
+`;
+
+const CardTexts = styled(FlexColumn)`
+  gap: 8px;
+  span {
+    font-size: 12px;
+    color: #a5a8f3;
+  }
+  p {
+    color: #f9f9fb;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0;
   }
 `;
 
@@ -255,6 +247,7 @@ const LeftSideWrapper = styled(FlexColumn)`
   gap: 32px;
 
   @media (max-width: 768px) {
+    width: 90%;
     h3 {
       font-size: 16px;
       width: 90%;
@@ -278,21 +271,22 @@ function HomePage() {
     <>
       <Container>
         <HeroWrapper>
-          <Header dark />
+          <Header />
           <HeroContainer>
             <LeftSideWrapper>
               <LeftTextWrapper>
-                <HeaderTitle $width="80%">
-                  Seamless access to
-                  <ColoredText color="#4B51E7"> medical data</ColoredText>
+                <HeaderTitle isWhite $width="80%">
+                  <WhiteColoredText>
+                    Seamless access to medical data
+                  </WhiteColoredText>
                 </HeaderTitle>
-                <DescriptionText width="50%">
-                  Enabling seamless access to complete patient history for
+                <DescriptionText IsWhite width="80%">
+                  Enabling seamless access to Complete Patient History for
                   individuals. Optimizing cost for payers, and Interoperability
                   development for Healthcare Providers.
                 </DescriptionText>
               </LeftTextWrapper>
-              <Button as="a" dark onClick={useScrolltoCTA}>
+              <Button as="a" onClick={useScrolltoCTA}>
                 Get Janus
               </Button>
               <LogosWrapper>
@@ -327,12 +321,12 @@ function HomePage() {
             <InterTextSection>
               <FlexColumn>
                 <Subtitle>For Medical Organizations</Subtitle>
-                <SectionTitle>
+                <SectionTitle isWhite>
                   Comply with interoperability regulation
                 </SectionTitle>
               </FlexColumn>
               <InterRightSection>
-                <DescriptionText>
+                <DescriptionText IsWhite>
                   Get compliance with patient access final and Information
                   Blocking rules. Janus is developing customized solutions for
                   seamless integration with FHIR.
@@ -342,11 +336,10 @@ function HomePage() {
             <FHIRDiagram>
               {!isTabletOrMobile && <img src={fhirDiagram} />}
               {isTabletOrMobile && <img src={fhirDiagramMobile} />}
-              {/* <FhirCircle /> */}
+              <FhirCircle />
             </FHIRDiagram>
           </InterSection>
         </HeroWrapper>
-        <CircleTwo />
       </Container>
       <ForIndividualsContainer>
         <SectionTitleWrapper style={{ alignItems: 'center' }}>
@@ -364,7 +357,7 @@ function HomePage() {
         </Button>
         <VisualContainer>
           {!isTabletOrMobile && (
-            <img src={medicalHistory} alt="" width={'70%'} />
+            <img src={medicalHistory} alt="" width={'80%'} />
           )}
           {isTabletOrMobile && (
             <>
@@ -380,18 +373,18 @@ function HomePage() {
           <SectionTitleWrapper>
             <Subtitle>For Medical Providers</Subtitle>
             <SectionTitle>Complete clinical picture</SectionTitle>
-            <DescriptionText width="90%">
-              Connect to payer directly, Access full patient histories, improve
-              diagnosis accuracy and patient trust.
-            </DescriptionText>
           </SectionTitleWrapper>
+          <DescriptionText>
+            Connect to payer directly, Access full patient histories, improve
+            diagnosis accuracy and patient trust.
+          </DescriptionText>
           <Button as="a" href="/providers" dark>
             Learn More
           </Button>
         </MedicalTextSection>
         <VisualContainer>
           {!isTabletOrMobile && (
-            <MedicalProvider src={medicalProvider} alt="" width={'90%'} />
+            <MedicalProvider src={medicalProvider} alt="" width={'80%'} />
           )}
           {isTabletOrMobile && (
             <MedicalProvider src={providerMobile} alt="" width={'100%'} />
