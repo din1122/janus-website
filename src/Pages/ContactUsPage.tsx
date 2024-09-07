@@ -22,7 +22,7 @@ const Container = styled(FlexColumn)`
 
 const HeroSectionWrapper = styled(FlexRowMiddle)`
   ${pageLayout}
-  padding: 180px 0;
+  padding: 200px 0 120px 0;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -38,7 +38,7 @@ const TextWrapper = styled(FlexColumn)`
 const ContactUsPage = () => {
   return (
     <Container>
-      <Header />
+      <Header dark={false} />
       <HeroSectionWrapper gap="120">
         <FlexColumn style={{ flex: 1.5 }}>
           <TextWrapper>
