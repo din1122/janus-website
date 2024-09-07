@@ -337,11 +337,13 @@ function HomePage() {
           </HeroContainer>
           <InterSection>
             <InterTextSection>
-              <FlexColumn>
-                <Subtitle>For Medical Organizations</Subtitle>
-                <SectionTitle>
-                  Comply with interoperability regulation
-                </SectionTitle>
+              <FlexColumn gap="16">
+                <FlexColumn>
+                  <Subtitle>For Medical Organizations</Subtitle>
+                  <SectionTitle>
+                    Comply with interoperability regulation
+                  </SectionTitle>
+                </FlexColumn>
                 <DescriptionText>
                   Get compliance with patient access final and Information
                   Blocking rules. Janus is developing customized solutions for
