@@ -292,8 +292,8 @@ function HomePage() {
           <HeroContainer>
             <LeftSideWrapper>
               <LeftTextWrapper>
-                <HeaderTitle $width="80%">
-                  Seamless access to<br></br>
+                <HeaderTitle $width="60%">
+                  Seamless access to
                   <ColoredText color="#4B51E7"> medical data</ColoredText>
                 </HeaderTitle>
                 <DescriptionText width="50%">
