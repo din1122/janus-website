@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Divider = styled.div<{ $isStickey: boolean }>`
+export const Divider = styled.div<{ $isStickey?: boolean }>`
   margin-top: 48px;
   position: fixed;
   width: 100%;
