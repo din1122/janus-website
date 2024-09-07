@@ -95,7 +95,7 @@ const CircleTwo = styled(Circle)`
 `;
 
 const DarkSecitonBackgroundWrapper = styled.div`
-  height: 100vh;
+  height: 110vh;
   display: flex;
 `;
 
@@ -353,7 +353,7 @@ const ProvidersPage = () => {
           </ResponsiveFlexRowMiddle>
         </DarkSectionBackgroundTextWrapper>
       </DarkSecitonBackgroundWrapper>
-      <SectionContainer $mobilePadding={'0 0 80px 0'}>
+      <SectionContainer $mobilePadding={'80px 0 80px 0'}>
         <ResponsiveFlexRowMiddle gap="160">
           <FlexColumn style={{ flex: 1 }} gap="24">
             <FlexColumn>

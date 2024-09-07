@@ -64,7 +64,7 @@ function InProgressPage() {
   return (
     <>
       <Container>
-        <Header />
+        <Header dark={false} />
         <TextWrapper>
           <h1>Good things are on the way</h1>
           <h3>
