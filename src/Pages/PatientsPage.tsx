@@ -22,11 +22,15 @@ import worldWideMap from '~/assets/patients-page/worldmap.svg';
 import CTASection from '~/components/CTASection';
 import HowItWorksSection from '~/components/HowItWorksSection';
 import { SectionContainer } from '~/shared/SectionContainer';
+import Button from '~/shared/Button';
+import useScrollToCTA from '~/components/utils/useScrollToCTA';
+import { Circle } from '~/components/Visuals';
+import { pageLayout } from '~/shared/LayoutStyle';
 
 const Container = styled(FlexColumn)`
   margin: 28px;
   border-radius: 24px;
-  background-color: #030417;
+  background-color: #f9f9fb;
   justify-content: center;
   position: relative;
   box-sizing: border-box;
@@ -37,9 +41,29 @@ const Container = styled(FlexColumn)`
 `;
 
 const PatinetsHeroSection = styled(FlexColumnCenter)`
-  width: 80%;
-  margin: auto;
-  padding: 100px 0;
+  ${pageLayout}
+  padding: 200px 0 100px 0;
+`;
+
+const GradiantsWrapper = styled.div`
+  border-radius: 24px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
+const CircleOne = styled(Circle)`
+  z-index: 0;
+  top: 50%;
+  right: -350px;
+`;
+
+const CircleTwo = styled(Circle)`
+  z-index: 0;
+  bottom: 0;
+  left: -350px;
 `;
 
 const PatientsPageMedicalImg = styled.img`
@@ -89,17 +113,20 @@ const PatientsPage = () => {
   return (
     <>
       <Container>
-        <Header />
+        <Header dark />
         <PatinetsHeroSection gap="12">
           <Subtitle>For Patients</Subtitle>
-          <HeaderTitle isCentered isWhite>
+          <HeaderTitle isCentered>
             Your Medical History at Your Fingertips
           </HeaderTitle>
-          <DescriptionText IsWhite isCentered width="70%">
+          <DescriptionText isCentered width="70%">
             Access, aggregate, and share all your medical records easily from
             your phone with Janus. Get the continuity of care you deserve
             anywhere in the world, without bureaucratic burdens.
           </DescriptionText>
+          <Button dark onClick={useScrollToCTA}>
+            Contact us
+          </Button>
           {!isTabletOrMobile ? (
             <PatientsPageMedicalImg
               src={patiantsPageMedical}
@@ -109,7 +136,12 @@ const PatientsPage = () => {
             <ImageElement src={summaryPage} alt="Summary Page" />
           )}
         </PatinetsHeroSection>
+        <GradiantsWrapper>
+          <CircleOne />
+          <CircleTwo />
+        </GradiantsWrapper>
       </Container>
+
       <HowItWorksSection />
 
       <SectionContainer $padding="50px 0">
@@ -137,7 +169,7 @@ const PatientsPage = () => {
         </FlexColumnCenter>
       </SectionContainer>
       <SectionContainer $padding="70px 0">
-        {isTabletOrMobile ? (
+        {isTabletOrMobile ? ( // TODO: Figure out a better way to do this
           <FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
               <Subtitle>Data Standaratization</Subtitle>
@@ -150,11 +182,7 @@ const PatientsPage = () => {
               </DescriptionText>
             </FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
-              {isTabletOrMobile ? (
-                <img src={dataStandardizationMobile} />
-              ) : (
-                <img src={dataStandardization} />
-              )}
+              <img src={dataStandardizationMobile} />
             </FlexColumn>
           </FlexColumn>
         ) : (

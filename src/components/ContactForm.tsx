@@ -54,7 +54,7 @@ const ContactForm = () => {
       }}
     >
       <FormWrapper gap="24">
-        <SectionTitle style={{ fontSize: '26px' }}>Contact Us</SectionTitle>
+        <SectionTitle style={{ fontSize: '26px' }}>Request a Demo</SectionTitle>
         <FlexColumn gap="24" style={{ flex: 1 }}>
           <input type="hidden" name="form-name" value="contact" />
           <FlexColumn gap="12">
@@ -80,7 +80,7 @@ const ContactForm = () => {
           </FlexColumn>
 
           <Button dark fullwidth type="submit">
-            Send
+            Send Request
           </Button>
         </FlexColumn>
       </FormWrapper>

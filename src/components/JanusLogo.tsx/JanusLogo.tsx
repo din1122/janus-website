@@ -1,4 +1,5 @@
 const JanusLogo = ({ isblack = false }: { isblack?: boolean }) => {
+  console.log(isblack);
   return (
     <svg
       width="108"

@@ -20,10 +20,11 @@ export const DescriptionText = styled.p<{
   }
 `;
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled.h3<{ isCentered?: boolean }>`
   font-size: 14px;
   color: #4b51e7;
   font-weight: 700;
+  ${({ isCentered }) => isCentered && 'text-align: center;'}
 `;
 
 export const SectionTitle = styled.h2<{
@@ -45,7 +46,7 @@ export const HeaderTitle = styled.h1<{
   isWhite?: boolean;
   $width?: string;
 }>`
-  font-size: 84px;
+  font-size: 64px;
   font-weight: 800;
   margin: 0;
   line-height: normal;

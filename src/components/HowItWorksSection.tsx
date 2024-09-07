@@ -129,11 +129,9 @@ const HowItWorksSection = () => {
   return (
     <SectionContainer $padding="230px 0 120px 0">
       <FlexColumnCenter style={{ flex: 1 }}>
-        <SectionTitle style={{ margin: 'auto', paddingBottom: '68px' }}>
-          How does it work?
-        </SectionTitle>
         {isTabletOrMobile ? (
           <FlexColumn gap="36">
+            <SectionTitle isCentered>How does it work?</SectionTitle>
             <FlexRow gap="12">
               {Sections.map((_, index) => (
                 <MobileChipSlide
@@ -175,6 +173,9 @@ const HowItWorksSection = () => {
               ))}
             </FlexColumn>
             <FlexColumn gap="24">
+              <SectionTitle style={{ paddingBottom: '68px' }}>
+                How does it work?
+              </SectionTitle>
               {Sections.map(({ title, description }, index) => (
                 <StepTextWrapper
                   key={index}

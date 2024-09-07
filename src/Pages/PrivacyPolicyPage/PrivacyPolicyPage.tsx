@@ -21,6 +21,7 @@ const Container = styled(FlexColumn)`
 const TermsContainer = styled.div`
   ${pageLayout}
   color: black;
+  padding-top: 200px;
 `;
 
 const PrivacyPolicyPage = () => {

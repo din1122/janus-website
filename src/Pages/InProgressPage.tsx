@@ -25,7 +25,7 @@ const TextWrapper = styled.div`
   gap: 4px;
   margin-bottom: auto;
   color: white;
-  padding: 90px 0 250px 0;
+  padding: 450px 0 450px 0;
   h1 {
     font-size: 64px;
     margin: 0;

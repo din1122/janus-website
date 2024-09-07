@@ -38,7 +38,7 @@ const HeroContainer = styled(FlexColumnCenter)`
   width: 60%;
   @media (max-width: 768px) {
     width: 100%;
-    padding: 60px 20px;
+    padding: 200px 20px 60px 20px;
   }
 `;
 
@@ -79,7 +79,7 @@ const About = () => {
   return (
     <>
       <Container>
-        <Header />
+        <Header dark={false} />
         <FlexColumnCenter>
           <HeroContainer gap="24">
             <FlexColumnCenter gap="4">

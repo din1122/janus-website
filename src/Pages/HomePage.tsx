@@ -18,6 +18,7 @@ import {
   Flex,
   FlexCenter,
   FlexColumn,
+  FlexColumnCenter,
   FlexMiddle,
   FlexRow,
   FlexRowSpaceBetween
@@ -41,8 +42,11 @@ import SectionTitle from '~/shared/Texts/SectionTitle';
 
 const HeroWrapper = styled(FlexColumn)`
   ${pageLayout}
+  padding-top:120px;
+
   @media (max-width: 768px) {
     gap: 48px;
+    padding: 0 20px;
   }
 `;
 
@@ -61,13 +65,6 @@ const Container = styled(FlexColumn)`
   }
 `;
 
-const CircleTwo = styled(Circle)`
-  z-index: 0;
-  bottom: -500px;
-  opacity: 0.5;
-  left: 0;
-`;
-
 const HeroContainer = styled.div`
   display: flex;
   align-items: center;
@@ -76,10 +73,18 @@ const HeroContainer = styled.div`
   width: 100%;
   margin: 0 auto auto auto;
   box-sizing: border-box;
+  padding-top: 120px;
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 24px 0%;
+    padding: 200px 12px 0 12px;
   }
+`;
+
+const CircleTwo = styled(Circle)`
+  z-index: 0;
+  bottom: -500px;
+  opacity: 0.5;
+  left: 0;
 `;
 
 const LogosWrapper = styled(FlexRow)`
@@ -150,14 +155,19 @@ const StyledAppImage = styled.img`
 
 /**** Interoperability Section *****/
 
-const InterSection = styled(FlexColumn)`
+const InterSection = styled(FlexRowSpaceBetween)`
   gap: 80px;
   padding: 120px 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const InterTextSection = styled(FlexRowSpaceBetween)`
+  width: 40%;
   @media (max-width: 768px) {
     flex-direction: column;
+    width: 100%;
   }
 `;
 
@@ -165,6 +175,7 @@ const InterRightSection = styled(Flex)`
   width: 40%;
   @media (max-width: 768px) {
     width: 100%;
+    justify-content: center;
   }
 `;
 
@@ -177,7 +188,6 @@ const VisualContainer = styled(FlexCenter)``;
 const ForIndividualsContainer = styled(FlexColumn)`
   align-items: center;
   padding: 120px 0;
-  gap: 12px;
   @media (max-width: 768px) {
     padding: 20px 20px;
   }
@@ -277,13 +287,13 @@ function HomePage() {
   return (
     <>
       <Container>
+        <Header dark />
         <HeroWrapper>
-          <Header dark />
           <HeroContainer>
             <LeftSideWrapper>
               <LeftTextWrapper>
                 <HeaderTitle $width="80%">
-                  Seamless access to
+                  Seamless access to<br></br>
                   <ColoredText color="#4B51E7"> medical data</ColoredText>
                 </HeaderTitle>
                 <DescriptionText width="50%">
@@ -293,7 +303,7 @@ function HomePage() {
                 </DescriptionText>
               </LeftTextWrapper>
               <Button as="a" dark onClick={useScrolltoCTA}>
-                Get Janus
+                Request a Demo
               </Button>
               <LogosWrapper>
                 <img src={HL7FHIR} />
@@ -311,16 +321,18 @@ function HomePage() {
               </FloatingCard>
               <StyledAppImage src={appImage} />
             </RightSideContainer>
-            <Circle
-              style={{
-                left: 0,
-                top: 0,
-                zIndex: 1,
-                height: '600px',
-                width: '600px',
-                opacity: 0.4
-              }}
-            />
+            {!isTabletOrMobile && (
+              <Circle
+                style={{
+                  left: 0,
+                  top: 0,
+                  zIndex: 1,
+                  height: '600px',
+                  width: '600px',
+                  opacity: 0.4
+                }}
+              />
+            )}
             <Circle />
           </HeroContainer>
           <InterSection>
@@ -330,38 +342,40 @@ function HomePage() {
                 <SectionTitle>
                   Comply with interoperability regulation
                 </SectionTitle>
-              </FlexColumn>
-              <InterRightSection>
                 <DescriptionText>
                   Get compliance with patient access final and Information
                   Blocking rules. Janus is developing customized solutions for
                   seamless integration with FHIR.
                 </DescriptionText>
-              </InterRightSection>
+              </FlexColumn>
             </InterTextSection>
-            <FHIRDiagram>
-              {!isTabletOrMobile && <img src={fhirDiagram} />}
-              {isTabletOrMobile && <img src={fhirDiagramMobile} />}
-              {/* <FhirCircle /> */}
-            </FHIRDiagram>
+            <InterRightSection>
+              <FHIRDiagram>
+                {!isTabletOrMobile && <img src={fhirDiagram} />}
+                {isTabletOrMobile && <img src={fhirDiagramMobile} />}
+                {/* <FhirCircle /> */}
+              </FHIRDiagram>
+            </InterRightSection>
           </InterSection>
         </HeroWrapper>
         <CircleTwo />
       </Container>
-      <ForIndividualsContainer>
-        <SectionTitleWrapper style={{ alignItems: 'center' }}>
-          <Subtitle>For Patients</Subtitle>
-          <SectionTitle isCentered>Full medical history access</SectionTitle>
-        </SectionTitleWrapper>
-        <DescriptionText isCentered width="50%">
-          Janus will allow you to access, aggregate and share all your medical
-          records easily from your phone. Allowing you to get the continuity of
-          care you deserve from anywhere in the world avoiding the bureaucratic
-          burden.
-        </DescriptionText>
-        <Button as="a" href="/patients" dark>
-          Learn More
-        </Button>
+      <ForIndividualsContainer gap="40">
+        <FlexColumnCenter gap="20">
+          <SectionTitleWrapper style={{ alignItems: 'center' }}>
+            <Subtitle>For Patients</Subtitle>
+            <SectionTitle isCentered>Full Medical History Access</SectionTitle>
+          </SectionTitleWrapper>
+          <DescriptionText isCentered width="50%">
+            Janus will allow you to access, aggregate and share all your medical
+            records easily from your phone. Allowing you to get the continuity
+            of care you deserve from anywhere in the world avoiding the
+            bureaucratic burden.
+          </DescriptionText>
+          <Button as="a" href="/patients" dark>
+            Learn More
+          </Button>
+        </FlexColumnCenter>
         <VisualContainer>
           {!isTabletOrMobile && (
             <img src={medicalHistory} alt="" width={'70%'} />
@@ -376,11 +390,11 @@ function HomePage() {
       </ForIndividualsContainer>
 
       <ForMedicalProvidersContainer>
-        <MedicalTextSection>
+        <MedicalTextSection style={{ flex: 1 }}>
           <SectionTitleWrapper>
             <Subtitle>For Medical Providers</Subtitle>
             <SectionTitle>Complete clinical picture</SectionTitle>
-            <DescriptionText width="90%">
+            <DescriptionText width="40vh">
               Connect to payer directly, Access full patient histories, improve
               diagnosis accuracy and patient trust.
             </DescriptionText>
@@ -389,13 +403,11 @@ function HomePage() {
             Learn More
           </Button>
         </MedicalTextSection>
-        <VisualContainer>
+        <VisualContainer style={{ flex: 1 }}>
           {!isTabletOrMobile && (
-            <MedicalProvider src={medicalProvider} alt="" width={'90%'} />
+            <MedicalProvider src={medicalProvider} alt="" />
           )}
-          {isTabletOrMobile && (
-            <MedicalProvider src={providerMobile} alt="" width={'100%'} />
-          )}
+          {isTabletOrMobile && <MedicalProvider src={providerMobile} alt="" />}
         </VisualContainer>
       </ForMedicalProvidersContainer>
       <CTASection />

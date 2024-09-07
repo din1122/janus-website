@@ -4,9 +4,7 @@ import {
   FlexCenter,
   FlexColumn,
   FlexColumnCenter,
-  FlexMiddle,
-  FlexRow,
-  FlexRowSpaceBetween
+  FlexRow
 } from '~/shared/flexes';
 import { pageLayout } from '~/shared/LayoutStyle';
 import {
@@ -16,13 +14,17 @@ import {
   Subtitle
 } from '~/shared/Texts';
 import providerHeroImage from '~/assets/providers-page/hero-page.png';
+import providerHeroImageMobile from '~/assets/providers-page/mobile-hero-image.png';
 import { Circle } from '~/components/Visuals';
 import { SectionContainer } from '~/shared/SectionContainer';
-import tempInsights from '~/assets/providers-page/temp-insights.png';
+import insights from '~/assets/providers-page/insights.png';
+import insightsMobile1 from '~/assets/providers-page/insights-mobile-1.png';
+import insightsMobile2 from '~/assets/providers-page/insights-mobile-2.png';
 import regulatory from '~/assets/providers-page/regulatory.png';
-import darkSectionbackground from '~/assets/providers-page/dark-section-backgorund.svg';
+import regulatoryMobile from '~/assets/providers-page/regulatory-mobile.png';
 import darkSectionBgGrid from '~/assets/providers-page/dark-section-bg-grid.png';
 import payerProvider from '~/assets/providers-page/payer-provider.png';
+import payerProviderMobile from '~/assets/providers-page/payer-provider-mobile.png';
 import globalHealthPortability from '~/assets/providers-page/global-health-portability.png';
 import tags from '~/assets/providers-page/tags.png';
 import benefitsClinical from '~/assets/providers-page/benefits-clinical.png';
@@ -31,6 +33,7 @@ import benefitsFinancial from '~/assets/providers-page/benefits-financial.png';
 import textShape from '~/assets/providers-page/textShape.png';
 import Button from '~/shared/Button';
 import useScrollToCTA from '~/components/utils/useScrollToCTA';
+import useIsTabletOrMobile from '~/components/utils/useIsTabletOrMobile';
 
 const Container = styled(FlexColumn)`
   padding: 0 0 32px 0;
@@ -49,11 +52,11 @@ const Container = styled(FlexColumn)`
 
 const HeroContainer = styled(FlexColumnCenter)`
   ${pageLayout}
-  padding: 100px 0;
+  padding: 220px 0 100px 0;
   width: 60%;
   @media (max-width: 768px) {
     width: 100%;
-    padding: 60px 20px;
+    padding: 200px 20px 60px 20px;
   }
 `;
 
@@ -72,6 +75,11 @@ const ProviderHeroImageElement = styled.img`
   max-width: 1200px;
   z-index: 1;
   transform: translate(45px, 0);
+  @media (max-width: 768px) {
+    width: 100%;
+    transform: translate(0, 0);
+    padding: 0 16px;
+  }
 `;
 
 const CircleOne = styled(Circle)`
@@ -91,12 +99,6 @@ const DarkSecitonBackgroundWrapper = styled.div`
   display: flex;
 `;
 
-const DarkSectionBackground = styled.img.attrs({ src: darkSectionbackground })`
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-`;
-
 const DarkSectionBackgroundTextWrapper = styled(FlexColumnCenter)`
   width: 80vw;
   max-width: 1700px;
@@ -111,6 +113,11 @@ const GridContainer = styled.div`
   gap: 20px;
   padding: 20px;
   height: 100%;
+  @media (max-width: 768px) {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
 `;
 
 const GridItem = styled.div`
@@ -124,18 +131,30 @@ const GridItem = styled.div`
 
 const Regulatory = styled(GridItem)`
   grid-column: 1 / 2;
+  @media (max-width: 768px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 const Operational = styled(GridItem)`
   grid-column: 2 / 2;
+  @media (max-width: 768px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 const PrivateSecure = styled(GridItem)`
   grid-column: 1 / 2;
+  @media (max-width: 768px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 const Financial = styled(GridItem)`
   grid-column: 2 / 2;
+  @media (max-width: 768px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 const Clinical = styled(GridItem)`
@@ -145,6 +164,9 @@ const Clinical = styled(GridItem)`
   flex-direction: column;
   align-items: center;
   background: #14151f;
+  @media (max-width: 768px) {
+    grid-column: 1 / 1;
+  }
 `;
 
 const BenefitsTitle = styled.h4<{ $isWhite?: boolean }>`
@@ -165,6 +187,7 @@ const BenefitsFinancial = styled.img.attrs({ src: benefitsFinancial })`
   right: 0;
   width: 80%;
 `;
+
 const TextShape = styled.img.attrs({ src: textShape })`
   position: absolute;
   bottom: 24px;
@@ -172,7 +195,51 @@ const TextShape = styled.img.attrs({ src: textShape })`
   width: 370px;
 `;
 
+const ResponsiveFlexRowMiddle = styled(FlexRow)`
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const DarkSectionBackgroundWrapper = styled.div`
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+`;
+
+const DarkSectionBackgorund = ({ isMobile }: { isMobile?: boolean }) => {
+  return (
+    <DarkSectionBackgroundWrapper>
+      {isMobile ? (
+        <svg
+          viewBox="0 0 390 799"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0C23.2342 4.86116 48.9504 8.85896 76.4386 11.8681C115.401 16.1332 157.16 18.3284 199.333 18.3284C241.505 18.3284 283.265 16.1332 322.227 11.8681C346.341 9.22827 369.092 5.82757 390 1.75058V799C366.804 794.153 341.138 790.165 313.707 787.162C274.745 782.897 232.985 780.702 190.813 780.702C148.641 780.702 106.881 782.897 67.9188 787.162C43.7482 789.808 20.9477 793.219 0 797.308L0 0Z"
+            fill="#14151F"
+          />
+        </svg>
+      ) : (
+        <svg
+          viewBox="0 0 1600 851"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0.300835C90.3401 20.0041 189.404 36.3275 294.815 48.8173C454.761 67.7694 626.188 77.5233 799.312 77.5233C972.435 77.5233 1143.86 67.7694 1303.81 48.8173C1409.75 36.264 1509.29 19.838 1600 0V850.321C1509.39 830.52 1409.98 814.122 1304.18 801.586C1144.24 782.634 972.812 772.88 799.688 772.88C626.565 772.88 455.138 782.634 295.192 801.586C189.634 814.093 90.4415 830.445 0 850.185L0 0.300835Z"
+            fill="#14151F"
+          />
+        </svg>
+      )}
+    </DarkSectionBackgroundWrapper>
+  );
+};
+
 const ProvidersPage = () => {
+  const isMobileOrTablet = useIsTabletOrMobile();
   return (
     <>
       <Container>
@@ -190,48 +257,67 @@ const ProvidersPage = () => {
               diagnosis accuracy and patient trust.
             </DescriptionText>
             <Button dark onClick={useScrollToCTA}>
-              Contact us
+              Request a Demo
             </Button>
           </HeroContainer>
-          <ProviderHeroImageElement src={providerHeroImage} />
+
+          {isMobileOrTablet ? (
+            <ProviderHeroImageElement src={providerHeroImageMobile} />
+          ) : (
+            <ProviderHeroImageElement src={providerHeroImage} />
+          )}
           <CircleOne />
           <CircleTwo />
         </FlexColumnCenter>
       </Container>
       <SectionContainer>
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
-          <Subtitle>For Medical Providers</Subtitle>
-          <SectionTitle isCentered>Complete Clinical Picture</SectionTitle>
+          <Subtitle>Data Standardization</Subtitle>
+          <SectionTitle isCentered>Comprehensive Patient Insights</SectionTitle>
           <DescriptionText width="60%" isCentered>
             Access real-time patient care episodes and journeys to inform
             preventive and intervention strategies. Make more informed decisions
             with a complete view of your patients' medical histories.
           </DescriptionText>
-          <img src={tempInsights} style={{ paddingTop: '80px' }} />
+          {isMobileOrTablet ? (
+            <>
+              <img src={insightsMobile1} style={{ paddingTop: '40px' }} />
+              <img src={insightsMobile2} />
+            </>
+          ) : (
+            <img src={insights} style={{ paddingTop: '80px' }} />
+          )}
         </FlexColumnCenter>
       </SectionContainer>
-      <SectionContainer $padding={'160px 0'}>
-        <FlexRowSpaceBetween gap="90">
+      <SectionContainer $padding={'160px 0'} $mobilePadding={'0 0 80px 0'}>
+        <ResponsiveFlexRowMiddle gap="90">
           <FlexColumn style={{ flex: 1 }} gap="24">
             <FlexColumn>
-              <Subtitle>Compliance</Subtitle>
-              <SectionTitle>Streamlined Regulatory Compliance</SectionTitle>
+              <Subtitle isCentered={isMobileOrTablet}>Compliance</Subtitle>
+              <SectionTitle isCentered={isMobileOrTablet}>
+                Streamlined Regulatory Compliance
+              </SectionTitle>
             </FlexColumn>
-            <DescriptionText>
+            <DescriptionText isCentered={isMobileOrTablet}>
               Ensure adherence to privacy regulations like GDPR and HIPAA while
               streamlining reporting requirements. Our system is designed to
               keep you compliant without added complexity.
             </DescriptionText>
           </FlexColumn>
           <FlexColumn style={{ flex: 1 }}>
-            <img src={regulatory} />
+            {isMobileOrTablet ? (
+              <img src={regulatoryMobile} />
+            ) : (
+              <img src={regulatory} />
+            )}
           </FlexColumn>
-        </FlexRowSpaceBetween>
+        </ResponsiveFlexRowMiddle>
       </SectionContainer>
       <DarkSecitonBackgroundWrapper>
-        <DarkSectionBackground />
+        <DarkSectionBackgorund isMobile={isMobileOrTablet} />
+
         <DarkSectionBackgroundTextWrapper>
-          <FlexRowSpaceBetween gap="60">
+          <ResponsiveFlexRowMiddle gap="60">
             <FlexColumn style={{ zIndex: 1, position: 'relative' }} gap="24">
               <FlexColumn>
                 <Subtitle>Reduced Administrative Burden</Subtitle>
@@ -245,14 +331,30 @@ const ProvidersPage = () => {
                 designed to keep you compliant without added complexity.
               </DescriptionText>
             </FlexColumn>
-            <FlexColumn>
-              <img src={darkSectionBgGrid} style={{ zIndex: 1 }} />
+            <FlexColumn style={{ overflow: 'hidden' }}>
+              {isMobileOrTablet ? (
+                <img
+                  src={darkSectionBgGrid}
+                  style={{
+                    transform: 'scale(1.5)',
+                    zIndex: 2,
+                    position: 'relative'
+                  }}
+                />
+              ) : (
+                <img
+                  src={darkSectionBgGrid}
+                  style={{
+                    zIndex: 1
+                  }}
+                />
+              )}
             </FlexColumn>
-          </FlexRowSpaceBetween>
+          </ResponsiveFlexRowMiddle>
         </DarkSectionBackgroundTextWrapper>
       </DarkSecitonBackgroundWrapper>
-      <SectionContainer>
-        <FlexRowSpaceBetween gap="160">
+      <SectionContainer $mobilePadding={'0 0 80px 0'}>
+        <ResponsiveFlexRowMiddle gap="160">
           <FlexColumn style={{ flex: 1 }} gap="24">
             <FlexColumn>
               <Subtitle>Billing and Payment</Subtitle>
@@ -268,16 +370,22 @@ const ProvidersPage = () => {
               burdens.
             </DescriptionText>
           </FlexColumn>
-          <FlexColumn style={{ flex: 1.2 }}>
-            <img src={payerProvider} />
-          </FlexColumn>
-        </FlexRowSpaceBetween>
+          {isMobileOrTablet ? (
+            <img src={payerProviderMobile} />
+          ) : (
+            <FlexColumn style={{ flex: 1.2 }}>
+              <img src={payerProvider} />
+            </FlexColumn>
+          )}
+        </ResponsiveFlexRowMiddle>
       </SectionContainer>
       <SectionContainer>
-        <FlexMiddle>
-          <FlexColumn style={{ flex: 1.5 }}>
-            <img src={globalHealthPortability} width={'55%'} />
-          </FlexColumn>
+        <ResponsiveFlexRowMiddle gap="48">
+          {!isMobileOrTablet && (
+            <FlexColumn style={{ flex: 1.5 }}>
+              <img src={globalHealthPortability} width={'60%'} />
+            </FlexColumn>
+          )}
           <FlexColumn style={{ flex: 1 }} gap="24">
             <FlexColumn>
               <Subtitle>Global Health Portability</Subtitle>
@@ -296,14 +404,22 @@ const ProvidersPage = () => {
               Learn More
             </Button>
           </FlexColumn>
-        </FlexMiddle>
+
+          {isMobileOrTablet && (
+            <FlexColumn style={{ flex: 1.5 }}>
+              <img src={globalHealthPortability} />
+            </FlexColumn>
+          )}
+        </ResponsiveFlexRowMiddle>
       </SectionContainer>
 
       <SectionContainer $padding="0 0">
         <FlexColumnCenter gap="48">
           <FlexCenter style={{ flexDirection: 'column' }}>
             <Subtitle>Why Janus</Subtitle>
-            <SectionTitle>Benefits of using Janus</SectionTitle>
+            <SectionTitle isCentered={isMobileOrTablet}>
+              Benefits of Using Janus
+            </SectionTitle>
           </FlexCenter>
           <GridContainer>
             <Regulatory>
