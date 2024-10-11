@@ -34,7 +34,7 @@ const Container = styled(FlexColumn)`
 
 const HeroContainer = styled(FlexColumnCenter)`
   ${pageLayout}
-  padding: 160px 0;
+  padding: 180px 0;
   width: 60%;
   @media (max-width: 768px) {
     width: 100%;
@@ -87,7 +87,7 @@ const About = () => {
               <HeroTextWrapper gap="12">
                 <HeaderTitle isWhite>Democratizing</HeaderTitle>
                 <HeaderTitle>
-                  <ColoredText>Healthcare</ColoredText>
+                  <ColoredText color="#A5A8F3">Healthcare</ColoredText>
                 </HeaderTitle>
               </HeroTextWrapper>
             </FlexColumnCenter>

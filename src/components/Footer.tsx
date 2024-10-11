@@ -79,7 +79,7 @@ const Footer = () => {
           </LinksContainer>
           <LinksContainer>
             <FooterSectionTitle>Support</FooterSectionTitle>
-            <RouterLink to="/in-progress">Contact us</RouterLink>
+            <RouterLink to="/contact-us">Contact us</RouterLink>
             <RouterLink to="/in-progress">Help Center</RouterLink>
             <RouterLink to="/in-progress">Resource Center</RouterLink>
             <RouterLink to="/in-progress">API Docs</RouterLink>
