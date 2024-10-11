@@ -55,9 +55,9 @@ const CTASection = () => {
       <CTASectionContainer>
         <TextWrapper>
           <SectionTitle isWhite>
-            Elevate Your Healthcare System to the{' '}
+            Elevate your healthcare system to the{' '}
             <ColoredText color={'#A5A8F3'} style={{ display: 'inline' }}>
-              Next Level
+              next level
             </ColoredText>
           </SectionTitle>
           <DescriptionText IsWhite>

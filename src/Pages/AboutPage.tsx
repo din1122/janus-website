@@ -87,7 +87,7 @@ const About = () => {
               <HeroTextWrapper gap="12">
                 <HeaderTitle isWhite>Democratizing</HeaderTitle>
                 <HeaderTitle>
-                  <ColoredText color="#A5A8F3">Healthcare</ColoredText>
+                  <ColoredText color="#A5A8F3">healthcare</ColoredText>
                 </HeaderTitle>
               </HeroTextWrapper>
             </FlexColumnCenter>

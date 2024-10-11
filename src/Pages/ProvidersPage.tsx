@@ -249,7 +249,7 @@ const ProvidersPage = () => {
             <FlexColumnCenter gap="4">
               <Subtitle>For Medical Providers</Subtitle>
               <HeroTextWrapper gap="12">
-                <HeaderTitle isCentered>Complete Clinical Picture</HeaderTitle>
+                <HeaderTitle isCentered>Complete clinical picture</HeaderTitle>
               </HeroTextWrapper>
             </FlexColumnCenter>
             <DescriptionText isCentered>
@@ -272,8 +272,8 @@ const ProvidersPage = () => {
       </Container>
       <SectionContainer>
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
-          <Subtitle>Data Standardization</Subtitle>
-          <SectionTitle isCentered>Comprehensive Patient Insights</SectionTitle>
+          <Subtitle>Data standardization</Subtitle>
+          <SectionTitle isCentered>Comprehensive patient insights</SectionTitle>
           <DescriptionText width="60%" isCentered>
             Access real-time patient care episodes and journeys to inform
             preventive and intervention strategies. Make more informed decisions
@@ -295,7 +295,7 @@ const ProvidersPage = () => {
             <FlexColumn>
               <Subtitle isCentered={isMobileOrTablet}>Compliance</Subtitle>
               <SectionTitle isCentered={isMobileOrTablet}>
-                Streamlined Regulatory Compliance
+                Streamlined regulatory compliance
               </SectionTitle>
             </FlexColumn>
             <DescriptionText isCentered={isMobileOrTablet}>
@@ -320,9 +320,9 @@ const ProvidersPage = () => {
           <ResponsiveFlexRowMiddle gap="60">
             <FlexColumn style={{ zIndex: 1, position: 'relative' }} gap="24">
               <FlexColumn>
-                <Subtitle>Reduced Administrative Burden</Subtitle>
+                <Subtitle>Reduced administrative burden</Subtitle>
                 <SectionTitle isWhite>
-                  Enhanced Workflow Efficiency
+                  Enhanced workflow efficiency
                 </SectionTitle>
               </FlexColumn>
               <DescriptionText IsWhite>
@@ -357,7 +357,7 @@ const ProvidersPage = () => {
         <ResponsiveFlexRowMiddle gap="160">
           <FlexColumn style={{ flex: 1 }} gap="24">
             <FlexColumn>
-              <Subtitle>Billing and Payment</Subtitle>
+              <Subtitle>Billing and payment</Subtitle>
               <SectionTitle>
                 Effortless Prior Authorizations and Billing
               </SectionTitle>
@@ -390,7 +390,7 @@ const ProvidersPage = () => {
             <FlexColumn>
               <Subtitle>Global Health Portability</Subtitle>
               <SectionTitle>
-                Enable Individuals to Access Their Medical Records
+                Easy patient access to their medical records
               </SectionTitle>
             </FlexColumn>
             <DescriptionText>
@@ -418,7 +418,7 @@ const ProvidersPage = () => {
           <FlexCenter style={{ flexDirection: 'column' }}>
             <Subtitle>Why Janus</Subtitle>
             <SectionTitle isCentered={isMobileOrTablet}>
-              Benefits of Using Janus
+              Benefits of using Janus
             </SectionTitle>
           </FlexCenter>
           <GridContainer>

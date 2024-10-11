@@ -117,7 +117,7 @@ const PatientsPage = () => {
         <PatinetsHeroSection gap="12">
           <Subtitle>For Patients</Subtitle>
           <HeaderTitle isCentered>
-            Your Medical History at Your Fingertips
+            Your medical history at your fingertips
           </HeaderTitle>
           <DescriptionText isCentered width="70%">
             Access, aggregate, and share all your medical records easily from
@@ -147,7 +147,7 @@ const PatientsPage = () => {
       <SectionContainer $padding="50px 0">
         <FlexColumnCenter gap="16" style={{ flex: 1 }}>
           <Subtitle>Consent Management</Subtitle>
-          <SectionTitle>It’s Your Data</SectionTitle>
+          <SectionTitle>It’s your data</SectionTitle>
           <DescriptionText isCentered width="60%">
             Janus puts you in control of what you share. Share a secured link to
             a single or all your medical records easily from your phone to any
@@ -173,7 +173,7 @@ const PatientsPage = () => {
           <FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
               <Subtitle>Data Standaratization</Subtitle>
-              <SectionTitle>Health Record Aggregation</SectionTitle>
+              <SectionTitle>Health record aggregation</SectionTitle>
               <DescriptionText>
                 All your health records in a single place. Forget handling
                 binders or taking a the day off to go to your provider to get
@@ -192,7 +192,7 @@ const PatientsPage = () => {
             </FlexColumn>
             <FlexColumn style={{ flex: 1 }}>
               <Subtitle>Data Standaratization</Subtitle>
-              <SectionTitle>Health Record Aggregation</SectionTitle>
+              <SectionTitle>Health record aggregation</SectionTitle>
               <DescriptionText>
                 All your health records in a single place. Forget handling
                 binders or taking a the day off to go to your provider to get

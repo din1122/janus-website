@@ -366,7 +366,7 @@ function HomePage() {
         <FlexColumnCenter gap="20">
           <SectionTitleWrapper style={{ alignItems: 'center' }}>
             <Subtitle>For Patients</Subtitle>
-            <SectionTitle isCentered>Full Medical History Access</SectionTitle>
+            <SectionTitle isCentered>Full medical history access</SectionTitle>
           </SectionTitleWrapper>
           <DescriptionText isCentered width="50%">
             Janus will allow you to access, aggregate and share all your medical
