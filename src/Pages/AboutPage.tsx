@@ -85,9 +85,10 @@ const About = () => {
             <FlexColumnCenter gap="4">
               <Subtitle>About Janus</Subtitle>
               <HeroTextWrapper gap="12">
-                <HeaderTitle isWhite>Democratizing</HeaderTitle>
-                <HeaderTitle>
-                  <ColoredText color="#A5A8F3">healthcare</ColoredText>
+                <HeaderTitle isWhite isCentered>
+                  Empowering{' '}
+                  <ColoredText color="#A5A8F3">Healthcare </ColoredText>
+                  Systems
                 </HeaderTitle>
               </HeroTextWrapper>
             </FlexColumnCenter>
