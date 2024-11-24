@@ -30,9 +30,10 @@ export const Subtitle = styled.h3<{ isCentered?: boolean }>`
 export const SectionTitle = styled.h2<{
   isWhite?: boolean;
   isCentered?: boolean;
+  $size?: 'S' | 'M';
 }>`
   color: #14151f;
-  font-size: 42px;
+  font-size: ${size => (size.$size === 'S' ? '24px' : '42px')};
   font-style: normal;
   font-weight: 700;
   line-height: normal;

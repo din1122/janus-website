@@ -20,6 +20,8 @@ import ErrorPage from './Pages/ErrorPage.tsx';
 import ContactUsPage from './Pages/ContactUsPage.tsx';
 import InProgressPage from './Pages/InProgressPage.tsx';
 import DarkHomePage from '~/Pages/HomePageDark.tsx';
+// import BlogPage from './Pages/Blog/BlogPage.tsx';
+// import BlogPostPage from './Pages/Blog/BlogPostPage.tsx';
 // import DragDropInteraction from '~/components/DragDropInteration.tsx';
 
 const router = createBrowserRouter(
@@ -36,6 +38,9 @@ const router = createBrowserRouter(
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-use" element={<TermsOfUsePage />} />
         <Route path="/in-progress" element={<InProgressPage />} />
+        {/* <Route path="/blog" element={<BlogPageTest />} /> */}
+        {/* <Route path="/blog/" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} /> */}
         {/* <Route path="/drag" element={<DragDropInteraction />} /> */}
       </Route>
     </>

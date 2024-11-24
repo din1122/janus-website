@@ -74,7 +74,7 @@ const Footer = () => {
             <RouterLink to="/about-us">About us</RouterLink>
             <RouterLink to="/in-progress">Use cases</RouterLink>
             <RouterLink to="/in-progress">Community</RouterLink>
-            <RouterLink to="/in-progress">Blog</RouterLink>
+            <RouterLink to="/blog">Blog</RouterLink>
             <RouterLink to="/in-progress">Media</RouterLink>
           </LinksContainer>
           <LinksContainer>
@@ -118,7 +118,7 @@ const Footer = () => {
             >
               Linkedin
             </HyperLink>
-            <RouterLink to="/in-progress">Blog</RouterLink>
+            <RouterLink to="/blog">Blog</RouterLink>
             <RouterLink to="/in-progress">Github</RouterLink>
           </LinksContainer>
         </LinksSectionContainer>
