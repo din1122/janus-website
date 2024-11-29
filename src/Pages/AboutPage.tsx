@@ -144,7 +144,7 @@ const About = () => {
           <SectionTitle>The People Behind Janus</SectionTitle>
         </FlexColumnCenter>
         <FlexRow>
-          <FlexColumnCenter gap="12">
+          {/* <FlexColumnCenter gap="12">
             <img src={dinImage} width={'70%'} />
             <FlexColumnCenter gap="0">
               <FounderName>Din Ashkenazi</FounderName>
@@ -153,7 +153,7 @@ const About = () => {
             <a target="_blank" href="https://www.linkedin.com/in/dinashk/">
               <IconBrandLinkedin />
             </a>
-          </FlexColumnCenter>
+          </FlexColumnCenter> */}
           <FlexColumnCenter gap="12">
             <img src={omriImage} width={'70%'} />
             <FlexColumnCenter gap="0">
