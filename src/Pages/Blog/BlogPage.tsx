@@ -1,7 +1,7 @@
 import { getStoryblokApi } from '@storyblok/react';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Article from '~/components/Article';
+// import Article from '~/components/Article';
 import CTASection from '~/components/CTASection';
 import Header from '~/components/Header';
 import { Circle } from '~/components/Visuals';
@@ -55,12 +55,12 @@ const Container = styled(FlexColumn)`
   }
 `;
 
-const GridContainer = styled.div`
-  display: grid;
-  grid-auto-rows: minmax(0, 1fr);
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 30px;
-`;
+// const GridContainer = styled.div`
+//   display: grid;
+//   grid-auto-rows: minmax(0, 1fr);
+//   grid-template-columns: repeat(3, minmax(200px, 1fr));
+//   gap: 30px;
+// `;
 
 const HeroContainer = styled.div`
   display: flex;
@@ -98,7 +98,7 @@ function BlogPage() {
     fetchData();
   }, []);
 
-  const nonFeaturedArticles = articles.slice(1);
+  // const nonFeaturedArticles = articles.slice(1);
 
   console.log(articles);
 
@@ -119,21 +119,21 @@ function BlogPage() {
               </FlexColumnCenter>
 
               <FlexRow gap={GRID_PADDING}>
-                <Article
+                {/* <Article
                   featured
                   // vertical
                   imageSize={['800px', '460px']}
                   title={articles[0]?.content?.title}
                   slug={articles[0]?.slug}
                   image={articles[0]?.content?.thumbnail?.filename}
-                />
+                /> */}
               </FlexRow>
             </FlexColumnCenter>
             <Circle />
           </HeroContainer>
           <FlexColumn gap="24">
             <SectionTitle $size="S">Most Popular Articles</SectionTitle>
-            <GridContainer>
+            {/* <GridContainer>
               {nonFeaturedArticles.map(
                 ({ content, uid, slug }: ArticleProps) => {
                   return (
@@ -148,7 +148,7 @@ function BlogPage() {
                   );
                 }
               )}
-            </GridContainer>
+            </GridContainer> */}
           </FlexColumn>
         </HeroWrapper>
       </Container>
