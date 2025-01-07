@@ -367,7 +367,7 @@ const OnePager = () => {
                 <div style={styles.bulletPoint}>
                   <span style={styles.bulletDot}>•</span>
                   <span>
-                    Grow Januss R&D and sales teams to drive market penetration
+                    Grow Janus R&D and sales teams to drive market penetration
                     and revenue growth.
                   </span>
                 </div>
@@ -403,7 +403,7 @@ const OnePager = () => {
                   <span style={styles.bulletDot}>•</span>
                   <span>
                     Complete the development of the Janus mobile app, marking
-                    the second phase of Januss three-part goto-market strategy.
+                    the second phase of Janus three-part goto-market strategy.
                   </span>
                 </div>
               </div>
