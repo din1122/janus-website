@@ -185,7 +185,7 @@ const OnePager = () => {
               <div style={styles.card}>
                 <h3 style={styles.cardTitle}>Systemic Issues</h3>
                 <p style={styles.text}>
-                  fragmentation of date with the need for quality of care lead
+                  fragmentation of data with the need for quality of care lead
                   to unsecured channels and data exchange barriers
                 </p>
               </div>
