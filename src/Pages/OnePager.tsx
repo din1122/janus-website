@@ -83,15 +83,14 @@ const styles = {
   paragraph: {
     marginBottom: '16px',
     lineHeight: '1.6',
-    fontSize: '16px'
+    fontSize: '1.2rem'
   },
   text: {
     color: '#344054',
-    fontSize: '16px'
+    fontSize: '1.2rem'
   },
   grid: {
     display: 'grid',
-
     gap: '24px',
     marginTop: '24px'
   },
@@ -109,7 +108,8 @@ const styles = {
     marginBottom: '16px',
     paddingLeft: '24px',
     display: 'flex',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    fontSize: '1rem'
   },
   bulletDot: {
     color: '#1a237e',
@@ -283,8 +283,16 @@ const OnePagerFont = () => {
                   Ready to use platform that improves patient onboarding
                   allowing instant access to:
                 </p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
-                  <li>Seamless integration across management systems</li>
+                <ul
+                  style={{
+                    listStyleType: 'disc',
+                    paddingLeft: '20px',
+                    fontSize: '1rem'
+                  }}
+                >
+                  <li style={{ marginTop: '12px' }}>
+                    Seamless integration across management systems
+                  </li>
                   <li>Consent and access to external medical history</li>
                   <li>Streamline billing claim processing</li>
                   <li>Unified access to patient health records</li>
