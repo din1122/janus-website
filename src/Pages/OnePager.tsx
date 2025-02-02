@@ -17,6 +17,7 @@ const Container = styled(FlexColumn)`
   justify-content: center;
   position: relative;
   box-sizing: border-box;
+
   @media (max-width: 768px) {
     margin: 16px;
     border-radius: 16px;
@@ -27,6 +28,9 @@ const TermsContainer = styled.div`
   ${pageLayout}
   color: black;
   padding-top: 200px;
+  & > * {
+    font-family: 'Inter', serif !important;
+  }
 `;
 
 const styles = {
@@ -79,11 +83,11 @@ const styles = {
   paragraph: {
     marginBottom: '16px',
     lineHeight: '1.6',
-    fontSize: '18px'
+    fontSize: '16px'
   },
   text: {
     color: '#344054',
-    fontSize: '18px'
+    fontSize: '16px'
   },
   grid: {
     display: 'grid',
@@ -95,7 +99,6 @@ const styles = {
     background: '#f9f9fb',
     padding: '24px',
     borderRadius: '8px',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
     transition: 'transform 0.2s ease-in-out'
   },
   cardHover: {
@@ -173,7 +176,7 @@ const styles = {
   }
 };
 
-const OnePager = () => {
+const OnePagerFont = () => {
   return (
     <>
       <Container>
@@ -502,4 +505,4 @@ const OnePager = () => {
   );
 };
 
-export default OnePager;
+export default OnePagerFont;
