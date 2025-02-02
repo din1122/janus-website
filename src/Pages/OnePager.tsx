@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import Header from '~/components/Header';
+import MarketSizeDiagram from '~/components/MarketSizeDiagram';
 import { FlexColumn } from '~/shared/flexes';
 import { pageLayout } from '~/shared/LayoutStyle';
 // import './OnePager.scss';
+
+import DEMO1 from '~/assets/onepager/demo1.png';
+// import DEMO2 from '~/assets/onepager/demo2.png';
+import VIDEO_DEMO from '~/assets/onepager/video-demo.mp4';
 
 const Container = styled(FlexColumn)`
   overflow: hidden;
@@ -136,6 +141,34 @@ const styles = {
     fontWeight: 'bold',
     marginBottom: '16px',
     color: '#332460'
+  },
+  videoContainer: {
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    background: '#f5f5f5',
+    borderRadius: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '24px',
+    overflow: 'hidden' // Ensures video respects border radius
+  },
+  video: {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    borderRadius: '8px'
+  },
+  demoImage: {
+    width: '100%',
+    // height: '300px',
+    background: '#e0e0e0',
+    borderRadius: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '16px'
   }
 };
 
@@ -150,65 +183,51 @@ const OnePager = () => {
           <header style={styles.header}>
             <h1 style={styles.headerTitle}>Executive Summary</h1>
             <p style={styles.paragraph}>
-              Healthcare data is fragmented across outdated, noninteroperable
+              Healthcare data is fragmented across outdated, non-interoperable
               systems, leading to high administrative costs and gaps in patient
-              care. Janus offers a scalable Infrastructure Platform as a Service
-              (IPaaS) that unifies identity, consent management, and regulatory
-              compliance (HIPAA, GDPR, TEFCA).
+              care. Janus offers a scalable platform unified identity, consent
+              management, while supporting regulatory compliance.
             </p>
             <p style={styles.paragraph}>
               Our mission is to democratize healthcare, making data universally
-              accessible and useful for everyone.
+              accessible and useful.
             </p>
           </header>
 
           <section style={styles.section}>
             <h2 style={styles.sectionTitle}>Problem Statement</h2>
             <p style={styles.paragraph}>
-              Healthcare systems today face critical challenges:
+              Globally, Healthcare providers struggle with outdated legacy
+              systems preventing compliance with new regulations. Preventing
+              secure data sharing, limiting continuity of care and informed
+              decision-making.
             </p>
-            <div style={styles.grid}>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Patients</h3>
-                <p style={styles.text}>
-                  Limited access to medical records compromises continuity of
-                  care and decision-making.
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Providers</h3>
-                <p style={styles.text}>
-                  Outdated systems and siloed data increase costs, create
-                  inefficiencies, and reduce care quality.
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Systemic Issues</h3>
-                <p style={styles.text}>
-                  fragmentation of data with the need for quality of care lead
-                  to unsecured channels and data exchange barriers
-                </p>
-              </div>
-            </div>
+            <p style={styles.paragraph}>
+              According to the World Health Organization (WHO), the burden of
+              managing non-standardized data has led to "monolithic legacy
+              digital systems and considerable technical debt in countries".
+              Healthcare infrastructure transformation to be implemented by all
+              OECD countries by 2028.
+            </p>
           </section>
 
           <section style={styles.section}>
-            <h2 style={styles.sectionTitle}>Solution and Differentiation</h2>
+            <h2 style={styles.sectionTitle}>Solution and Value Proposition</h2>
             <p style={styles.paragraph}>
-              A secure platform that connects healthcare ecosystem players for
-              efficient, seamless data sharing.
+              New secure cloud based platform that connects between healthcare
+              ecosystem players for efficient and seamless data sharing serving
+              new healthcare approach:
             </p>
             <div style={styles.grid}>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Providers</h3>
+                <h3 style={styles.cardTitle}>Interoperability Framework</h3>
                 <p style={styles.text}>
-                  Portable compliant platform that improves patient onboarding
-                  allowing instant access to historical medical and claims data
-                  to ensure continuity of care.
+                  Support peer to peer data exchange between health providers
+                  and payers. E.g. hospital, labs, IOT, Insurers.
                 </p>
               </div>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Patients</h3>
+                <h3 style={styles.cardTitle}>Patient Centricity</h3>
                 <p style={styles.text}>
                   Empowers individuals with unified health and claims data
                   access with digital consent, enabling control of their health
@@ -216,120 +235,88 @@ const OnePager = () => {
                 </p>
               </div>
             </div>
+          </section>
 
-            <div style={styles.highlight}>
-              <h3 style={styles.subsectionTitle}>Key Features:</h3>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Unified health records for seamless integration across
-                  systems.
-                </span>
-              </div>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Robust security and compliance with global standards like
-                  HIPAA and GDPR.
-                </span>
-              </div>
+          <section style={styles.section}>
+            <h2 style={styles.sectionTitle}>Demo</h2>
+            <div style={styles.videoContainer}>
+              <video
+                style={styles.video}
+                src={VIDEO_DEMO}
+                controls
+                playsInline
+                poster={DEMO1} // Optional: use one of your demo images as poster
+                preload="metadata"
+              />
             </div>
-
-            <div style={styles.highlight}>
-              <h3 style={styles.subsectionTitle}>Unique Advantages:</h3>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Built on international standards like FHIR for
-                  interoperability.
-                </span>
+            <div style={styles.grid}>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>For Providers</h3>
+                <p style={styles.text}>
+                  Ready to use platform that improves patient onboarding
+                  allowing instant access to:
+                </p>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  <li>Seamless integration across management systems</li>
+                  <li>Consent and access to external medical history</li>
+                  <li>Streamline billing claim processing</li>
+                  <li>Unified access to patient health records</li>
+                </ul>
               </div>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Designed to meet TEFCA QHIN requirements with robust HIPAA,
-                  GDPR, and emerging global standards adherence.
-                </span>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>For Patients</h3>
+                <p style={styles.text}>
+                  Empowers individuals with unified access to health data and
+                  claims powered by digital consent management, enabling control
+                  of their health records across providers globally.
+                </p>
               </div>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Patient-focused with scalable, modular solutions for various
-                  clinic types.
-                </span>
+              {/* <div style={styles.demoImage}>
+                <img src={DEMO1} alt="Patient Portal Demo" />
               </div>
-              <div style={styles.bulletPoint}>
-                <span style={styles.bulletDot}>•</span>
-                <span style={styles.text}>
-                  Strategic entry starting with dentists and aesthetics clinics,
-                  with future expansion into other medical specialties.
-                </span>
-              </div>
+              <div style={styles.demoImage}>
+                <img src={DEMO2} alt="Patient Portal Demo" />
+              </div> */}
             </div>
           </section>
 
           <section style={styles.section}>
             <h2 style={styles.sectionTitle}>Market Opportunity</h2>
-            <div style={styles.marketStats}>
-              <div style={styles.marketValue}>$8.57 billion by 2030</div>
-              <p style={styles.paragraph}>
-                The global healthcare interoperability market, valued at $3.42
-                billion in 2023, is projected to reach $8.57 billion by 2030
-                (CAGR: 14.15%), driven by the demand for seamless data exchange
-              </p>
-            </div>
-            <div style={styles.grid}>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>United States</h3>
-                <p style={styles.text}>
-                  Government-led push toward interoperability (TEFCA, 21st
-                  Century Cures Act)
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Europe</h3>
-                <p style={styles.text}>
-                  Strong momentum from regulations promoting upgrade to outdated
-                  legacy healthcare systems.
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Israel</h3>
-                <p style={styles.text}>
-                  Rapidly advancing digital health ecosystem serves us as a hub
-                  for healthcare innovation, with rising adoption of advanced
-                  interoperability solutions.
-                </p>
-              </div>
-            </div>
-          </section>
+            <MarketSizeDiagram />
+            {/* <div style={styles.marketStats}>
+              <h3 style={styles.subsectionTitle}>
+                Total Addressable Market (TAM)
+              </h3>
+              <p style={styles.text}>~17.5B USD</p>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li>• Healthcare API market: 1.2B USD</li>
+                <li>• EMR/EHR: 11.3B USD</li>
+                <li>• Global interoperability-FHIR Server: 5B USD</li>
+              </ul>
 
-          <section style={styles.section}>
-            <h2 style={styles.sectionTitle}>Go to Market Strategy</h2>
-            <div style={styles.grid}>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Private Clinics</h3>
-                <p>
-                  Provide tailored EHR solutions as a service to improve
-                  workflows and simplify onboard providers.specificity
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Patient Portal</h3>
-                <p>
-                  Launch a patient-facing app for real-time consent updates,
-                  data sharing, and transparency.
-                </p>
-              </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Hospitals and Public Systems</h3>
-                <p>
-                  Achieve interoperability with fragmented networks, integrating
-                  with existing infrastructures. Promote infrastructure
-                  development and their support for existing system
-                </p>
-              </div>
-            </div>
+              <h3 style={styles.subsectionTitle}>
+                Serviceable Addressable Market (SAM)
+              </h3>
+              <p style={styles.text}>100M USD</p>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li>• USA dental and aesthetic clinics EMR: 950M USD</li>
+                <li>• EU Romania dental and aesthetic clinics EMR: 48M USD</li>
+                <li>
+                  • Data interoperability (FHIR Server): Blue ocean - too early
+                  to evaluate
+                </li>
+              </ul>
+
+              <h3 style={styles.subsectionTitle}>
+                Serviceable Obtainable Market (SOM)
+              </h3>
+              <p style={styles.text}>8M USD</p>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li>• Dental clinic EMR: 20M USD</li>
+                <li>• FHIR infrastructure development: 23M USD</li>
+                <li>• Aesthetic procedure: 700,000 Pt/year</li>
+              </ul>
+            </div> */}
           </section>
 
           <section style={styles.section}>
@@ -339,76 +326,102 @@ const OnePager = () => {
             <div style={styles.fundingSection}>
               <p style={styles.paragraph}>
                 <strong>Current Round:</strong> Janus is raising{' '}
-                <strong>$1.5 million via SAFE</strong>, funding up to
-                <strong> 18 months</strong> of R&D and growth. This SAFE is part
-                of a planned $4 million Seed round and will enable us to meet
-                growing demand from potential clients and achieve key
-                milestones.
+                <strong>$1.5 million via SAFE</strong>, funding up to{' '}
+                <strong>18 months</strong> of R&D and growth. This SAFE is part
+                of a planned $4.5 million Seed round.
               </p>
               <p style={styles.paragraph}>
                 <strong>Next Steps:</strong> After completing the SAFE round, we
-                will raise the remaining $2.5 million within 12 months to
-                accelerate growth, expand into new markets, and scale our
-                platform and team.
+                will raise the remaining $3 million within 12 months.
               </p>
             </div>
 
             <div style={styles.grid}>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>2025-2026 $1.5M SAFE Round</h3>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Implementation of the iPaaS platform to reach{' '}
-                    <strong>$100K ARR by the end of 2025</strong>, capitalizing
-                    on a robust client pipeline.
-                  </span>
-                </div>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Grow Janus R&D and sales teams to drive market penetration
-                    and revenue growth.
-                  </span>
-                </div>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Strengthen partnerships with business stakeholders and
-                    technical leaders like AWS, Databricks, and others to
-                    enhance platform scalability and ensure regulatory
-                    compliance.
-                  </span>
-                </div>
+                <h3 style={styles.cardTitle}>
+                  2025-2026 - $1.5M Pre-Seed (SAFE)
+                </h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Achieve early traction: Deployment in 100 dental and
+                      aesthetics clinics and reach a minimum of $100K ARR.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Build and launch the MVP with core interoperability
+                      features.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Automated consent management and predictive patient
+                      onboarding using AI modules.
+                    </span>
+                  </li>
+                </ul>
               </div>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>2026-2028 $2.5M Completion</h3>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Expand the Janus team to support customer growth and the
-                    implementation of the platform across additional private
-                    healthcare clinic segments.
-                  </span>
-                </div>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Strengthen collaboration efforts and increase market
-                    awareness to drive scalable user onboarding, enhancing both
-                    server-side infrastructure and customer support capacity.
-                  </span>
-                </div>
-                <div style={styles.bulletPoint}>
-                  <span style={styles.bulletDot}>•</span>
-                  <span>
-                    Complete the development of the Janus mobile app, marking
-                    the second phase of Janus three-part goto-market strategy.
-                  </span>
-                </div>
+                <h3 style={styles.cardTitle}>
+                  2026-2027 - $3M Seed (Completion)
+                </h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Deployment in 150 dental and aesthetics clinics and reach
+                      a minimum of $1M ARR.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Product AI functionalities: predictive analytics and
+                      data-driven decision making.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Launch Janus patient-facing app and begin market expansion
+                      into selected US and EU regions.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>Series A ($5M+; 2027-2029)</h3>
+                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Deployment in 750 dental and aesthetics clinics and reach
+                      a minimum of $4M ARR.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Scale operations globally and extend the platform to
+                      additional healthcare horizontally.
+                    </span>
+                  </li>
+                  <li style={styles.bulletPoint}>
+                    <span style={styles.bulletDot}>•</span>
+                    <span>
+                      Fully embed AI across the platform and achieve dominant
+                      market share in target segments.
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
+
           <section
             style={{ ...styles.section, background: '#1a237e', color: 'white' }}
           >
@@ -421,16 +434,17 @@ const OnePager = () => {
                 <p>
                   Email:{' '}
                   <a
-                    href="mailto:omri.cohen@janus.ac"
+                    href="mailto:omri.cohen@genus.ac"
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     omri.cohen@janus.ac
                   </a>
                 </p>
+                <p>Address: Aharon Bekar 1A, Tel Aviv, Israel</p>
                 <p>
                   Website:{' '}
                   <a
-                    href="http://www.janus.ac"
+                    href="http://www.genus.ac"
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     www.janus.ac
