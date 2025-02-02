@@ -31,13 +31,13 @@ const TermsContainer = styled.div`
 
 const styles = {
   container: {
-    maxWidth: '1200px',
+    maxWidth: '1000px',
     margin: '0 auto',
     background: '#ffffff',
     color: '#333333'
   },
   section: {
-    marginBottom: '32px',
+    marginBottom: '20px',
     background: '#ffffff',
     borderRadius: '12px',
     padding: '24px',
@@ -52,32 +52,38 @@ const styles = {
   },
   title: {
     fontSize: '32px',
-    fontWeight: 'bold',
+    fontWeight: '700',
     marginBottom: '24px',
     color: '#1a237e',
     borderBottom: '3px solid #1a237e',
     paddingBottom: '8px'
   },
   headerTitle: {
-    fontSize: '36px',
-    fontWeight: 'bold',
+    fontSize: '28px',
+    fontWeight: '700',
     marginBottom: '16px',
     color: 'white'
   },
   sectionTitle: {
     fontSize: '24px',
-    fontWeight: 700,
-    marginBottom: '20px',
+    fontWeight: '700',
+    marginBottom: '8px',
     color: '#1a237e'
+  },
+  cardTitle: {
+    fontSize: '20px',
+    fontWeight: '600',
+    marginBottom: '8px',
+    color: '#1D2939'
   },
   paragraph: {
     marginBottom: '16px',
     lineHeight: '1.6',
-    fontSize: '16px'
+    fontSize: '18px'
   },
   text: {
     color: '#344054',
-    fontSize: '16px'
+    fontSize: '18px'
   },
   grid: {
     display: 'grid',
@@ -95,12 +101,7 @@ const styles = {
   cardHover: {
     transform: 'translateY(-4px)'
   },
-  cardTitle: {
-    fontSize: '20px',
-    fontWeight: 'bold',
-    marginBottom: '12px',
-    color: '#1D2939'
-  },
+
   bulletPoint: {
     marginBottom: '16px',
     paddingLeft: '24px',
@@ -126,7 +127,7 @@ const styles = {
   },
   marketValue: {
     fontSize: '28px',
-    fontWeight: 'bold',
+    fontWeight: '700',
     color: '#1a237e',
     marginBottom: '16px'
   },
@@ -138,7 +139,7 @@ const styles = {
   },
   subsectionTitle: {
     fontSize: '20px',
-    fontWeight: 'bold',
+    fontWeight: '700',
     marginBottom: '16px',
     color: '#332460'
   },
@@ -197,10 +198,9 @@ const OnePager = () => {
           <section style={styles.section}>
             <h2 style={styles.sectionTitle}>Problem Statement</h2>
             <p style={styles.paragraph}>
-              Globally, Healthcare providers struggle with outdated legacy
-              systems preventing compliance with new regulations. Preventing
-              secure data sharing, limiting continuity of care and informed
-              decision-making.
+              Healthcare providers worldwide struggle with outdated legacy
+              systems and compliance with new regulations. It prevents them from
+              providing secure data sharing and high-quality care.
             </p>
             <p style={styles.paragraph}>
               According to the World Health Organization (WHO), the burden of
@@ -234,21 +234,45 @@ const OnePager = () => {
                   records across providers globally.
                 </p>
               </div>
+              <p style={styles.text}>
+                These healthcare players will benefit dramatically from the
+                reduction of operational costs, privacy risks and maintenance
+                burdens using compliant identity and consent management
+                implementation.
+              </p>
             </div>
           </section>
-
           <section style={styles.section}>
-            <h2 style={styles.sectionTitle}>Demo</h2>
-            <div style={styles.videoContainer}>
-              <video
-                style={styles.video}
-                src={VIDEO_DEMO}
-                controls
-                playsInline
-                poster={DEMO1} // Optional: use one of your demo images as poster
-                preload="metadata"
-              />
+            <h2 style={styles.sectionTitle}>Go-to-Market Strategy</h2>
+            <div style={styles.grid}>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>EHR for Dental and Aesthetics</h3>
+                <p style={styles.text}>
+                  A cloud-based, HIPAA-compliant platform tailored for
+                  specialized practitioners with a freemium model that
+                  simplifies practice management, improves workflows, and
+                  streamlines provider onboarding.
+                </p>
+              </div>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>FHIR Service</h3>
+                <p style={styles.text}>
+                  Payment tokenization services based on Fast Healthcare
+                  interoperability resources (FHIR) allowing automation and
+                  standard communication with other FHIR Servers.
+                </p>
+              </div>
+              <div style={styles.card}>
+                <h3 style={styles.cardTitle}>Interoperability Service</h3>
+                <p style={styles.text}>
+                  Data collaboration solution based on FHIR server
+                  communication.
+                </p>
+              </div>
             </div>
+          </section>
+          <section style={styles.section}>
+            <h2 style={styles.sectionTitle}>The Product</h2>
             <div style={styles.grid}>
               <div style={styles.card}>
                 <h3 style={styles.cardTitle}>For Providers</h3>
@@ -277,6 +301,17 @@ const OnePager = () => {
               <div style={styles.demoImage}>
                 <img src={DEMO2} alt="Patient Portal Demo" />
               </div> */}
+              <h2 style={styles.sectionTitle}>Demo</h2>
+              <div style={styles.videoContainer}>
+                <video
+                  style={styles.video}
+                  src={VIDEO_DEMO}
+                  controls
+                  playsInline
+                  poster={DEMO1} // Optional: use one of your demo images as poster
+                  preload="metadata"
+                />
+              </div>
             </div>
           </section>
 
@@ -430,7 +465,15 @@ const OnePager = () => {
                 <h3 style={{ ...styles.cardTitle, color: 'white' }}>
                   Contact Information
                 </h3>
-                <p>Phone: +972 (50) 666-6976</p>
+                <p style={{ fontSize: '18px' }}>
+                  Phone:{' '}
+                  <a
+                    href="https://wa.me/972506666976"
+                    style={{ textDecoration: 'underline' }}
+                  >
+                    +972 (50) 666-6976{' '}
+                  </a>
+                </p>
                 <p>
                   Email:{' '}
                   <a
@@ -444,7 +487,7 @@ const OnePager = () => {
                 <p>
                   Website:{' '}
                   <a
-                    href="http://www.genus.ac"
+                    href="http://www.janus.ac"
                     style={{ color: 'white', textDecoration: 'none' }}
                   >
                     www.janus.ac
