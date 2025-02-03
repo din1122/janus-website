@@ -279,7 +279,7 @@ const OnePagerFont = () => {
             <h2 style={styles.sectionTitle}>Our Products</h2>
             <div style={styles.grid}>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Providers</h3>
+                {/* <h3 style={styles.cardTitle}>For Providers</h3> */}
                 <p style={styles.text}>
                   Ready to use platform that improves patient onboarding
                   allowing instant access to:
@@ -299,14 +299,7 @@ const OnePagerFont = () => {
                   <li>Unified access to patient health records</li>
                 </ul>
               </div>
-              <div style={styles.card}>
-                <h3 style={styles.cardTitle}>For Patients</h3>
-                <p style={styles.text}>
-                  Empowers individuals with unified access to health data and
-                  claims powered by digital consent management, enabling control
-                  of their health records across providers globally.
-                </p>
-              </div>
+
               {/* <div style={styles.demoImage}>
                 <img src={DEMO1} alt="Patient Portal Demo" />
               </div>
