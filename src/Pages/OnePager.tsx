@@ -7,6 +7,7 @@ import { pageLayout } from '~/shared/LayoutStyle';
 import DEMO1 from '~/assets/onepager/demo1.png';
 
 import VIDEO_DEMO from '~/assets/onepager/video-demo.mp4';
+import { IconExternalLink } from '@tabler/icons-react';
 
 const Container = styled(FlexColumn)`
   overflow: hidden;
@@ -440,9 +441,13 @@ const OnePagerFont = () => {
                   Phone:{' '}
                   <a
                     href="https://wa.me/972506666976"
-                    style={{ textDecoration: 'underline' }}
+                    style={{
+                      textDecoration: 'underline',
+                      display: 'inline-flex',
+                      gap: '4px'
+                    }}
                   >
-                    +972 (50) 666-6976{' '}
+                    +972 (50) 666-6976 <IconExternalLink />
                   </a>
                 </p>
                 <p>
