@@ -184,9 +184,9 @@ const marketData: MarketData = {
     title: 'Total Addressable Market',
     value: '17.5B USD',
     details: [
-      'Healthcare API market',
-      'EMR/EHR',
-      'Global interoperability-FHIR Server'
+      'Healthcare API Market',
+      'EMR/EHR Global Market',
+      'Global interoperability - FHIR Servers'
     ]
   },
   sam: {
