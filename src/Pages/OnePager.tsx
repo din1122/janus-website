@@ -283,7 +283,7 @@ const OnePagerFont = () => {
                 {/* <h3 style={styles.cardTitle}>For Providers</h3> */}
                 <p style={styles.text}>
                   Ready to use platform that improves patient onboarding
-                  allowing instant access to:
+                  allowing:
                 </p>
                 <ul
                   style={{
