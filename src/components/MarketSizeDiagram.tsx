@@ -18,9 +18,7 @@ interface MarketData {
 // Styled Components
 const Container = styled.div`
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -160,24 +158,25 @@ const Value = styled.p`
   margin: 0 0 16px 0;
 `;
 
-// const DetailsList = styled.ul`
-//   list-style: none;
-//   padding: 0;
-//   margin: 0;
-// `;
-//
-// const DetailItem = styled.li`
-//   color: #4a5568;
-//   padding: 8px 0;
-//   display: flex;
-//   align-items: center;
-//
-//   &:before {
-//     content: '•';
-//     color: #2d4a8c;
-//     margin-right: 8px;
-//   }
-// `;
+const DetailsList = styled.ul<{ $isActive: boolean }>`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const DetailItem = styled.li`
+  color: #4a5568;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  &:before {
+    content: '•';
+    color: #2d4a8c;
+    margin-right: 8px;
+  }
+`;
 
 // Market Data
 const marketData: MarketData = {
@@ -185,27 +184,27 @@ const marketData: MarketData = {
     title: 'Total Addressable Market',
     value: '17.5B USD',
     details: [
-      'Healthcare API market: 1.2B USD',
-      'EMR/EHR: 11.3B USD',
-      'Global interoperability-FHIR Server: 5B USD'
+      'Healthcare API market',
+      'EMR/EHR',
+      'Global interoperability-FHIR Server'
     ]
   },
   sam: {
     title: 'Serviceable Available Market',
     value: '100M USD',
     details: [
-      'USA dental and aesthetic clinics EMR: 950M USD',
-      'EU Romania dental and aesthetic clinics EMR: 48M USD',
-      'Data interoperability (FHIR Server): Blue ocean'
+      'USA dental and aesthetic clinics EMR',
+      'EU Romania dental and aesthetic clinics EMR',
+      'Data interoperability (FHIR Server)'
     ]
   },
   som: {
     title: 'Serviceable Obtainable Market',
     value: '8M USD',
     details: [
-      'Dental clinic EMR: 20M USD',
-      'FHIR infrastructure development: 23M USD',
-      'Aesthetic procedure: 700,000 Pt/year'
+      'Dental clinic EMR',
+      'FHIR infrastructure development',
+      'Aesthetic procedures'
     ]
   }
 };
@@ -285,11 +284,12 @@ const MarketSizeDiagram: React.FC = () => {
           >
             <Title>{data.title}</Title>
             <Value>{data.value}</Value>
-            {/* <DetailsList>
+
+            <DetailsList $isActive={activeSegment === key}>
               {data.details.map((detail, index) => (
                 <DetailItem key={index}>{detail}</DetailItem>
               ))}
-            </DetailsList> */}
+            </DetailsList>
           </SegmentDetails>
         ))}
       </DetailsContainer>

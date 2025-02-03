@@ -3,10 +3,9 @@ import Header from '~/components/Header';
 import MarketSizeDiagram from '~/components/MarketSizeDiagram';
 import { FlexColumn } from '~/shared/flexes';
 import { pageLayout } from '~/shared/LayoutStyle';
-// import './OnePager.scss';
 
 import DEMO1 from '~/assets/onepager/demo1.png';
-// import DEMO2 from '~/assets/onepager/demo2.png';
+
 import VIDEO_DEMO from '~/assets/onepager/video-demo.mp4';
 
 const Container = styled(FlexColumn)`
@@ -258,24 +257,26 @@ const OnePagerFont = () => {
                 </p>
               </div>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>FHIR Service</h3>
+                <h3 style={styles.cardTitle}>FHIR enforcement</h3>
                 <p style={styles.text}>
-                  Payment tokenization services based on Fast Healthcare
-                  interoperability resources (FHIR) allowing automation and
-                  standard communication with other FHIR Servers.
+                  Fast Healthcare interoperability resources (FHIR)
+                  implementation and maintenance allowing Healthcare players to
+                  meet compliancy and effective data migration
                 </p>
               </div>
               <div style={styles.card}>
-                <h3 style={styles.cardTitle}>Interoperability Service</h3>
+                <h3 style={styles.cardTitle}>
+                  Interoperability FHIR infrastructure
+                </h3>
                 <p style={styles.text}>
-                  Data collaboration solution based on FHIR server
-                  communication.
+                  Offer to Healthcare players FHIR services. Data Usage-based
+                  server performing real-time peer-to-peer communication.
                 </p>
               </div>
             </div>
           </section>
           <section style={styles.section}>
-            <h2 style={styles.sectionTitle}>The Product</h2>
+            <h2 style={styles.sectionTitle}>Our Products</h2>
             <div style={styles.grid}>
               <div style={styles.card}>
                 <h3 style={styles.cardTitle}>For Providers</h3>
@@ -329,40 +330,6 @@ const OnePagerFont = () => {
           <section style={styles.section}>
             <h2 style={styles.sectionTitle}>Market Opportunity</h2>
             <MarketSizeDiagram />
-            {/* <div style={styles.marketStats}>
-              <h3 style={styles.subsectionTitle}>
-                Total Addressable Market (TAM)
-              </h3>
-              <p style={styles.text}>~17.5B USD</p>
-              <ul style={{ listStyleType: 'none', padding: 0 }}>
-                <li>• Healthcare API market: 1.2B USD</li>
-                <li>• EMR/EHR: 11.3B USD</li>
-                <li>• Global interoperability-FHIR Server: 5B USD</li>
-              </ul>
-
-              <h3 style={styles.subsectionTitle}>
-                Serviceable Addressable Market (SAM)
-              </h3>
-              <p style={styles.text}>100M USD</p>
-              <ul style={{ listStyleType: 'none', padding: 0 }}>
-                <li>• USA dental and aesthetic clinics EMR: 950M USD</li>
-                <li>• EU Romania dental and aesthetic clinics EMR: 48M USD</li>
-                <li>
-                  • Data interoperability (FHIR Server): Blue ocean - too early
-                  to evaluate
-                </li>
-              </ul>
-
-              <h3 style={styles.subsectionTitle}>
-                Serviceable Obtainable Market (SOM)
-              </h3>
-              <p style={styles.text}>8M USD</p>
-              <ul style={{ listStyleType: 'none', padding: 0 }}>
-                <li>• Dental clinic EMR: 20M USD</li>
-                <li>• FHIR infrastructure development: 23M USD</li>
-                <li>• Aesthetic procedure: 700,000 Pt/year</li>
-              </ul>
-            </div> */}
           </section>
 
           <section style={styles.section}>
