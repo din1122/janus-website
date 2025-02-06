@@ -10,7 +10,7 @@ import {
 } from '~/shared/Texts';
 import worldMap from '~/assets/worldmap.svg';
 import { IconBrandLinkedin } from '@tabler/icons-react';
-// import dinImage from '~/assets/din-img.jpg';
+import dinImage from '~/assets/din-img.jpg';
 import omriImage from '~/assets/omri-img.jpg';
 import visionImage from '~/assets/icons/vision.svg';
 import missionImage from '~/assets/icons/mission.svg';
