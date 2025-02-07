@@ -353,7 +353,7 @@ const OnePagerFont = () => {
                     <span style={styles.bulletDot}>•</span>
                     <span>
                       Achieve early traction: Deployment in 100 dental and
-                      aesthetics clinics and reach a minimum of $100K ARR.
+                      aesthetics clinics and reach a minimum of $400K ARR.
                     </span>
                   </li>
                   <li style={styles.bulletPoint}>
