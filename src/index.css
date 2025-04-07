@@ -2,28 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Greycliff CF';
-  src: url('./assets/fonts/Greycliff-CF-Regular.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Greycliff CF';
-  src: url('./assets/fonts/Greycliff-CF-Bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
- @font-face {
-  font-family: 'Greycliff CF';
-  src: url('./assets/fonts/Greycliff-CF-Medium.otf') format('opentype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-
 
 @font-face {
   font-family: 'Inter';
@@ -46,7 +24,7 @@
   }
 
 :root {
-  font-family: 'Greycliff CF';
+  font-family: 'Inter';
   line-height: 1.5;
   font-weight: 400;
 

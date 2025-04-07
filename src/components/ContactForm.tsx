@@ -17,7 +17,6 @@ const commonInputStyles = css`
   border-radius: 8px;
   background: transparent;
   color: #292a3d;
-  font-family: 'Greycliff CF';
   &:focus-visible {
     outline: 1px solid #8586ad;
   }
